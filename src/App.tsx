@@ -10,6 +10,9 @@ import NotFound from "./pages/NotFound";
 import WebDevelopment from "./pages/services/WebDevelopment";
 import AIAgents from "./pages/services/AIAgents";
 import DigitalMarketing from "./pages/services/DigitalMarketing";
+import SupportAutomation from "./pages/services/SupportAutomation";
+import StrategicConsulting from "./pages/services/StrategicConsulting";
+import UXUIDesign from "./pages/services/UXUIDesign";
 import Legal from "./pages/legal/Legal";
 import Privacy from "./pages/legal/Privacy";
 import Terms from "./pages/legal/Terms";
@@ -28,6 +31,9 @@ const App = () => (
             <Route path="/services/web-development" element={<WebDevelopment />} />
             <Route path="/services/ai-agents" element={<AIAgents />} />
             <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
+            <Route path="/services/support-automation" element={<SupportAutomation />} />
+            <Route path="/services/strategic-consulting" element={<StrategicConsulting />} />
+            <Route path="/services/ux-ui-design" element={<UXUIDesign />} />
             <Route path="/legal" element={<Legal />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />

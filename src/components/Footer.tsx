@@ -44,11 +44,12 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
             <ul className="space-y-2">
-              <li><Link to="/services/web-development" className="text-gray-400 hover:text-kazihub-gold transition-colors">Développement Web</Link></li>
-              <li><a href="#" className="text-gray-400 hover:text-kazihub-gold transition-colors">Applications Mobile</a></li>
-              <li><Link to="/services/ai-agents" className="text-gray-400 hover:text-kazihub-gold transition-colors">Agents IA</Link></li>
-              <li><Link to="/services/digital-marketing" className="text-gray-400 hover:text-kazihub-gold transition-colors">Marketing Digital</Link></li>
-              <li><a href="#" className="text-gray-400 hover:text-kazihub-gold transition-colors">UX/UI Design</a></li>
+              <li><Link to="/services/web-development" className="text-gray-400 hover:text-kazihub-gold transition-colors">Développement Web & Mobile</Link></li>
+              <li><Link to="/services/ai-agents" className="text-gray-400 hover:text-kazihub-gold transition-colors">Agents IA Personnalisés</Link></li>
+              <li><Link to="/services/digital-marketing" className="text-gray-400 hover:text-kazihub-gold transition-colors">Marketing Digital & IA</Link></li>
+              <li><Link to="/services/support-automation" className="text-gray-400 hover:text-kazihub-gold transition-colors">Support & Automatisation</Link></li>
+              <li><Link to="/services/strategic-consulting" className="text-gray-400 hover:text-kazihub-gold transition-colors">Conseil Stratégique</Link></li>
+              <li><Link to="/services/ux-ui-design" className="text-gray-400 hover:text-kazihub-gold transition-colors">UX/UI Design</Link></li>
             </ul>
           </div>
 

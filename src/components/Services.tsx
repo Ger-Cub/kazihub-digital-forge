@@ -32,19 +32,22 @@ const Services = () => {
       icon: '⚡',
       titleKey: 'services.support.title',
       descKey: 'services.support.desc',
-      color: 'from-orange-500 to-red-500'
+      color: 'from-orange-500 to-red-500',
+      link: '/services/support-automation'
     },
     {
       icon: '💼',
       titleKey: 'services.consulting.title',
       descKey: 'services.consulting.desc',
-      color: 'from-indigo-500 to-purple-500'
+      color: 'from-indigo-500 to-purple-500',
+      link: '/services/strategic-consulting'
     },
     {
       icon: '🎨',
       titleKey: 'services.design.title',
       descKey: 'services.design.desc',
-      color: 'from-pink-500 to-rose-500'
+      color: 'from-pink-500 to-rose-500',
+      link: '/services/ux-ui-design'
     }
   ];
 
@@ -90,18 +93,12 @@ const Services = () => {
               </p>
 
               <div className="mt-6">
-                {service.link ? (
-                  <Link 
-                    to={service.link}
-                    className="text-kazihub-gold hover:text-kazihub-emerald transition-colors duration-200 font-semibold"
-                  >
-                    En savoir plus →
-                  </Link>
-                ) : (
-                  <button className="text-kazihub-gold hover:text-kazihub-emerald transition-colors duration-200 font-semibold">
-                    En savoir plus →
-                  </button>
-                )}
+                <Link 
+                  to={service.link}
+                  className="text-kazihub-gold hover:text-kazihub-emerald transition-colors duration-200 font-semibold"
+                >
+                  En savoir plus →
+                </Link>
               </div>
             </div>
           ))}
