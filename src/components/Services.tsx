@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const { t } = useLanguage();
@@ -10,19 +11,22 @@ const Services = () => {
       icon: '🌐',
       titleKey: 'services.web.title',
       descKey: 'services.web.desc',
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-blue-500 to-cyan-500',
+      link: '/services/web-development'
     },
     {
       icon: '🤖',
       titleKey: 'services.ai.title',
       descKey: 'services.ai.desc',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-purple-500 to-pink-500',
+      link: '/services/ai-agents'
     },
     {
       icon: '📈',
       titleKey: 'services.marketing.title',
       descKey: 'services.marketing.desc',
-      color: 'from-green-500 to-emerald-500'
+      color: 'from-green-500 to-emerald-500',
+      link: '/services/digital-marketing'
     },
     {
       icon: '⚡',
@@ -42,6 +46,17 @@ const Services = () => {
       descKey: 'services.design.desc',
       color: 'from-pink-500 to-rose-500'
     }
+  ];
+
+  const technologies = [
+    { name: 'React', icon: '⚛️' },
+    { name: 'TypeScript', icon: '📘' },
+    { name: 'Node.js', icon: '🟢' },
+    { name: 'Python', icon: '🐍' },
+    { name: 'AI/ML', icon: '🧠' },
+    { name: 'Supabase', icon: '🗄️' },
+    { name: 'Figma', icon: '🎨' },
+    { name: 'TailwindCSS', icon: '💨' }
   ];
 
   return (
@@ -70,14 +85,23 @@ const Services = () => {
                 {t(service.titleKey)}
               </h3>
               
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed mb-6">
                 {t(service.descKey)}
               </p>
 
               <div className="mt-6">
-                <button className="text-kazihub-gold hover:text-kazihub-emerald transition-colors duration-200 font-semibold">
-                  En savoir plus →
-                </button>
+                {service.link ? (
+                  <Link 
+                    to={service.link}
+                    className="text-kazihub-gold hover:text-kazihub-emerald transition-colors duration-200 font-semibold"
+                  >
+                    En savoir plus →
+                  </Link>
+                ) : (
+                  <button className="text-kazihub-gold hover:text-kazihub-emerald transition-colors duration-200 font-semibold">
+                    En savoir plus →
+                  </button>
+                )}
               </div>
             </div>
           ))}
@@ -87,9 +111,10 @@ const Services = () => {
         <div className="mt-20 text-center">
           <h3 className="text-2xl font-bold text-white mb-8">Technologies & Outils</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {['React', 'TypeScript', 'Node.js', 'Python', 'AI/ML', 'Supabase', 'Figma', 'TailwindCSS'].map((tech) => (
-              <span key={tech} className="glass-effect px-4 py-2 rounded-full text-sm text-kazihub-gold">
-                {tech}
+            {technologies.map((tech) => (
+              <span key={tech.name} className="glass-effect px-4 py-2 rounded-full text-sm text-kazihub-gold flex items-center gap-2">
+                <span className="text-lg">{tech.icon}</span>
+                {tech.name}
               </span>
             ))}
           </div>

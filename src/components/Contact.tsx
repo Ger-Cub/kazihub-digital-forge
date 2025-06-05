@@ -21,20 +21,45 @@ const Contact = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: t('contact.success'),
-        description: "Nous vous recontacterons sous 24h !",
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // À remplacer par votre clé
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+          to: 'contact@kazihub.digital'
+        }),
       });
-      setFormData({ name: '', email: '', company: '', message: '' });
+
+      if (response.ok) {
+        toast({
+          title: t('contact.success'),
+          description: "Nous vous recontacterons sous 24h !",
+        });
+        setFormData({ name: '', email: '', company: '', message: '' });
+      } else {
+        throw new Error('Erreur lors de l\'envoi');
+      }
+    } catch (error) {
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue. Veuillez réessayer.",
+        variant: "destructive"
+      });
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   const handleWhatsApp = () => {
     const message = `Bonjour KaziHub ! Je souhaite discuter d'un projet digital.`;
-    const whatsappUrl = `https://wa.me/+243000000000?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+243991102448?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -56,8 +81,10 @@ const Contact = () => {
           <div className="glass-effect p-8 rounded-2xl">
             <h3 className="text-2xl font-bold text-white mb-6">{t('contact.title')}</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
               <div>
                 <Input
+                  name="name"
                   placeholder={t('contact.name')}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -68,6 +95,7 @@ const Contact = () => {
               <div>
                 <Input
                   type="email"
+                  name="email"
                   placeholder={t('contact.email')}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -77,6 +105,7 @@ const Contact = () => {
               </div>
               <div>
                 <Input
+                  name="company"
                   placeholder={t('contact.company')}
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
@@ -85,6 +114,7 @@ const Contact = () => {
               </div>
               <div>
                 <Textarea
+                  name="message"
                   placeholder={t('contact.message')}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -130,7 +160,7 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <span className="text-kazihub-gold">📱</span>
-                  <span className="text-gray-300">+243 000 000 000</span>
+                  <span className="text-gray-300">+243 991 102 448</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <span className="text-kazihub-gold">🌍</span>

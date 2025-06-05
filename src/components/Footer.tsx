@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -33,7 +34,7 @@ const Footer = () => {
               <a href="#" className="w-10 h-10 bg-kazihub-blue rounded-full flex items-center justify-center hover:bg-kazihub-gold transition-colors">
                 <span className="text-white">✉️</span>
               </a>
-              <a href="#" className="w-10 h-10 bg-kazihub-blue rounded-full flex items-center justify-center hover:bg-kazihub-gold transition-colors">
+              <a href={`https://wa.me/+243991102448`} className="w-10 h-10 bg-kazihub-blue rounded-full flex items-center justify-center hover:bg-kazihub-gold transition-colors">
                 <span className="text-white">📱</span>
               </a>
             </div>
@@ -43,10 +44,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-kazihub-gold transition-colors">Développement Web</a></li>
+              <li><Link to="/services/web-development" className="text-gray-400 hover:text-kazihub-gold transition-colors">Développement Web</Link></li>
               <li><a href="#" className="text-gray-400 hover:text-kazihub-gold transition-colors">Applications Mobile</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-kazihub-gold transition-colors">Agents IA</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-kazihub-gold transition-colors">Marketing Digital</a></li>
+              <li><Link to="/services/ai-agents" className="text-gray-400 hover:text-kazihub-gold transition-colors">Agents IA</Link></li>
+              <li><Link to="/services/digital-marketing" className="text-gray-400 hover:text-kazihub-gold transition-colors">Marketing Digital</Link></li>
               <li><a href="#" className="text-gray-400 hover:text-kazihub-gold transition-colors">UX/UI Design</a></li>
             </ul>
           </div>
@@ -56,7 +57,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
             <ul className="space-y-2">
               <li className="text-gray-400">📧 contact@kazihub.digital</li>
-              <li className="text-gray-400">📱 +243 000 000 000</li>
+              <li className="text-gray-400">📱 +243 991 102 448</li>
               <li className="text-gray-400">🌍 Kinshasa, RD Congo</li>
               <li className="text-gray-400">⏰ Réponse sous 24h</li>
             </ul>
@@ -68,9 +69,9 @@ const Footer = () => {
             © 2024 KaziHub Digital Agency. {t('footer.rights')}
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors">Mentions légales</a>
-            <a href="#" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors">Confidentialité</a>
-            <a href="#" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors">CGV</a>
+            <Link to="/legal" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors">Mentions légales</Link>
+            <Link to="/privacy" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors">Confidentialité</Link>
+            <Link to="/terms" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors">CGV</Link>
           </div>
         </div>
       </div>
