@@ -51,8 +51,12 @@ const About = () => {
           {/* Founder Card */}
           <div className="glass-effect p-8 rounded-2xl">
             <div className="text-center">
-              <div className="w-32 h-32 bg-gradient-to-r from-kazihub-gold to-kazihub-emerald rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-4xl font-bold text-kazihub-dark">GC</span>
+              <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-r from-kazihub-gold to-kazihub-emerald p-1">
+                <img 
+                  src="/lovable-uploads/6d37ff0d-fcea-4a98-a253-7ecb3ac2ad30.png" 
+                  alt="Gerard Cubaka - CEO & Fondateur de KaziHub"
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
               <h3 className="text-2xl font-bold gradient-text mb-2">
                 {t('about.founder')}
