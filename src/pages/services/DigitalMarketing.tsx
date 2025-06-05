@@ -3,6 +3,8 @@ import React from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { TrendingUp, Target, Share2, Camera, PenTool, BarChart3 } from 'lucide-react';
 import { Button } from '../../components/ui/button';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 const DigitalMarketing = () => {
   const { t } = useLanguage();
@@ -18,6 +20,7 @@ const DigitalMarketing = () => {
 
   return (
     <div className="min-h-screen bg-kazihub-dark text-white">
+      <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -89,6 +92,7 @@ const DigitalMarketing = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

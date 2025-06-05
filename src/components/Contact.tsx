@@ -28,7 +28,7 @@ const Contact = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // À remplacer par votre clé
+          access_key: '2e250eed-85d5-4a23-9a4c-e97c662adc24',
           name: formData.name,
           email: formData.email,
           company: formData.company,
@@ -81,7 +81,7 @@ const Contact = () => {
           <div className="glass-effect p-8 rounded-2xl">
             <h3 className="text-2xl font-bold text-white mb-6">{t('contact.title')}</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+              <input type="hidden" name="access_key" value="2e250eed-85d5-4a23-9a4c-e97c662adc24" />
               <div>
                 <Input
                   name="name"
