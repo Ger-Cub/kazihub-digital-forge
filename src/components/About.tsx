@@ -54,7 +54,7 @@ const About = () => {
               <div className="text-center">
                 <div className="w-40 h-40 mx-auto mb-8 rounded-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500 overflow-hidden bg-gradient-to-br from-cosmic-indigo to-cosmic-violet p-1.5 shadow-2xl">
                   <img
-                    src="/lovable-uploads/6d37ff0d-fcea-4a98-a253-7ecb3ac2ad30.png"
+                    src="/lovable-uploads/ceo-modern.jpg"
                     alt={t('about.founder')}
                     className="w-full h-full object-cover rounded-xl"
                   />
