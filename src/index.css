@@ -1,78 +1,38 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 33% 2%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 222 47% 4%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 47% 4%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 251 191 36;
-    --primary-foreground: 10 15 28;
+    --primary: 239 84% 67%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 16 185 129;
-    --secondary-foreground: 10 15 28;
+    --secondary: 271 91% 65%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 251 191 36;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 239 84% 67%;
 
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 10 15 28;
-    --foreground: 248 250 252;
-
-    --card: 30 41 59;
-    --card-foreground: 248 250 252;
-
-    --popover: 30 41 59;
-    --popover-foreground: 248 250 252;
-
-    --primary: 251 191 36;
-    --primary-foreground: 10 15 28;
-
-    --secondary: 16 185 129;
-    --secondary-foreground: 10 15 28;
-
-    --muted: 71 85 105;
-    --muted-foreground: 203 213 225;
-
-    --accent: 30 58 138;
-    --accent-foreground: 248 250 252;
-
-    --destructive: 239 68 68;
-    --destructive-foreground: 248 250 252;
-
-    --border: 71 85 105;
-    --input: 71 85 105;
-    --ring: 251 191 36;
-
-    --sidebar-background: 10 15 28;
-    --sidebar-foreground: 248 250 252;
-    --sidebar-primary: 251 191 36;
-    --sidebar-primary-foreground: 10 15 28;
-    --sidebar-accent: 30 41 59;
-    --sidebar-accent-foreground: 248 250 252;
-    --sidebar-border: 71 85 105;
-    --sidebar-ring: 251 191 36;
+    --radius: 0.75rem;
   }
 }
 
@@ -82,7 +42,20 @@
   }
 
   body {
-    @apply bg-kazihub-dark text-foreground font-sans;
+    @apply bg-cosmic-black text-foreground font-sans selection:bg-cosmic-indigo/30;
+    background-image:
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.1) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-outfit tracking-tight;
   }
 
   html {
@@ -92,18 +65,37 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-kazihub-gold to-kazihub-emerald bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-cosmic-indigo via-cosmic-violet to-cosmic-pink bg-clip-text text-transparent;
   }
 
-  .glass-effect {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  .glass-premium {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] shadow-glass;
+  }
+
+  .glass-card {
+    @apply glass-premium hover:border-white/[0.15] transition-all duration-500 hover:shadow-glass-indigo;
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-kazihub-gold to-kazihub-emerald text-kazihub-dark font-semibold px-6 py-3 rounded-lg hover:scale-105 transition-all duration-300 shadow-lg;
+    @apply relative overflow-hidden bg-cosmic-indigo text-white font-semibold px-8 py-4 rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg shadow-cosmic-indigo/20 flex items-center justify-center gap-2;
+  }
+
+  .btn-primary::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full hover:animate-shimmer;
   }
 
   .btn-secondary {
-    @apply border border-kazihub-gold text-kazihub-gold hover:bg-kazihub-gold hover:text-kazihub-dark px-6 py-3 rounded-lg transition-all duration-300;
+    @apply glass-premium text-white hover:bg-white/5 px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
   }
 }

@@ -19,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+				outfit: ['Outfit', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -63,12 +67,22 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// KaziHub custom colors
-				'kazihub-dark': '#0a0f1c',
-				'kazihub-blue': '#1e3a8a',
-				'kazihub-gold': '#f59e0b',
-				'kazihub-emerald': '#10b981',
+				// Cosmic Tech Palette
+				'cosmic-black': '#05070a',
+				'cosmic-indigo': '#6366f1',
+				'cosmic-violet': '#a855f7',
+				'cosmic-pink': '#ec4899',
+				'cosmic-slate': '#94a3b8',
+				// Legacy compatible colors
+				'kazihub-dark': '#05070a',
+				'kazihub-blue': '#6366f1',
+				'kazihub-gold': '#a855f7',
+				'kazihub-emerald': '#ec4899',
 				'kazihub-gray': '#1f2937'
+			},
+			boxShadow: {
+				'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+				'glass-indigo': '0 8px 32px 0 rgba(99, 102, 241, 0.1)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -119,6 +133,11 @@ export default {
 					'50%': {
 						transform: 'translateY(-5px)'
 					}
+				},
+				'shimmer': {
+					'100%': {
+						transform: 'translateX(100%)'
+					}
 				}
 			},
 			animation: {
@@ -126,7 +145,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.8s ease-out',
-				'bounce-gentle': 'bounce-gentle 2s infinite'
+				'bounce-gentle': 'bounce-gentle 2s infinite',
+				'shimmer': 'shimmer 1.5s infinite'
 			}
 		}
 	},

@@ -48,37 +48,54 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+    <div className="min-h-screen bg-cosmic-black text-white selection:bg-cosmic-indigo/30">
       <SEO titleKey="seo.pricing.title" descriptionKey="seo.pricing.description" />
       <Header />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative overflow-hidden">
+        {/* Glow effects */}
+        <div className="absolute top-20 left-0 w-96 h-96 bg-cosmic-indigo/10 rounded-full blur-[120px] -translate-x-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cosmic-violet/10 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2"></div>
+
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
+        <div className="text-center mb-24 animate-fade-in relative z-10">
+          <h1 className="text-5xl md:text-7xl font-bold font-outfit gradient-text mb-8 tracking-tight">
             {t('pricing.title')}
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="w-24 h-1.5 bg-gradient-to-r from-cosmic-indigo to-cosmic-violet mx-auto rounded-full mb-10"></div>
+          <p className="text-xl text-cosmic-slate max-w-3xl mx-auto font-medium leading-relaxed">
             {t('pricing.subtitle')}
           </p>
         </div>
 
         {/* Pricing Plans */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
           {plans.map((plan, index) => (
-            <div key={index} className="glass-effect p-6 rounded-2xl text-center hover:scale-105 transition-transform">
-              <h3 className="text-2xl font-bold text-kazihub-gold mb-4">{plan.name}</h3>
-              <p className="text-3xl font-bold text-foreground mb-6">{plan.price}</p>
-              <ul className="text-muted-foreground mb-6 space-y-2">
+            <div
+              key={index}
+              className={`glass-card p-10 rounded-[2.5rem] flex flex-col items-center hover:-translate-y-2 transition-all duration-500 group ${index === 1 ? 'border-cosmic-indigo/30 shadow-2xl shadow-cosmic-indigo/10' : 'border-white/5'}`}
+            >
+              {index === 1 && (
+                <div className="bg-cosmic-indigo text-white text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1 rounded-full mb-6 shadow-glow">
+                  Recommandé
+                </div>
+              )}
+              <h3 className="text-2xl font-bold font-outfit text-white mb-4 group-hover:text-cosmic-indigo transition-colors">{plan.name}</h3>
+              <div className="flex items-baseline mb-10">
+                <span className="text-5xl font-bold font-outfit text-white tracking-tight">{plan.price}</span>
+              </div>
+              <ul className="w-full text-cosmic-slate mb-12 space-y-5 flex-grow">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center justify-center">
-                    <span className="text-kazihub-emerald mr-2">✔</span>
+                  <li key={idx} className="flex items-center text-sm font-medium">
+                    <div className="w-5 h-5 bg-cosmic-indigo/20 text-cosmic-indigo rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <span className="text-xs">✓</span>
+                    </div>
                     {feature}
                   </li>
                 ))}
               </ul>
               <Link
                 to={plan.buttonLink}
-                className="btn-primary text-lg px-8 py-3 inline-block"
+                className={`w-full py-5 rounded-2xl font-bold font-outfit text-center transition-all duration-300 ${index === 1 ? 'btn-primary' : 'glass-premium hover:bg-white/5 border-white/10'}`}
               >
                 {plan.buttonText}
               </Link>

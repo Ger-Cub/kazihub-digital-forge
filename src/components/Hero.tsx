@@ -8,43 +8,41 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 sm:pt-24 lg:pt-28"
-      style={{
-        backgroundImage: 'url("https://iihtng.com/wp-content/uploads/2020/07/IIHT-Project-Management.png.webp")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
     >
-      {/* Semi-transparent overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      {/* Background Mesh Gradients */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-[10%] left-[-10%] w-[50%] h-[50%] bg-cosmic-indigo/20 rounded-full blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-[10%] right-[-10%] w-[50%] h-[50%] bg-cosmic-violet/20 rounded-full blur-[120px] animate-pulse delay-1000"></div>
+      </div>
 
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-kazihub-dark via-kazihub-blue/20 to-kazihub-dark"></div>
-
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-kazihub-gold/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-kazihub-emerald/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+      {/* Grid Pattern Pattern */}
+      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="animate-fade-in">
+        <div className="animate-fade-in flex flex-col items-center">
+          {/* Badge */}
+          <div className="glass-premium px-4 py-1.5 rounded-full text-xs font-bold text-cosmic-indigo uppercase tracking-[0.2em] mb-8 animate-bounce-gentle">
+            Innovation & Craftsmanship
+          </div>
+
           {/* Main heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] font-outfit tracking-tight max-w-5xl">
             <span className="gradient-text">{t('hero.title')}</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-cosmic-slate mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
             {t('hero.subtitle')}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-in-right">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
             <Button
               size="lg"
-              className="btn-primary text-lg px-8 py-4"
+              className="btn-primary"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               {t('hero.cta')}
@@ -52,36 +50,35 @@ const Hero = () => {
             <Button
               variant="outline"
               size="lg"
-              className="btn-secondary text-lg px-8 py-4 hover:text-gray-900"
+              className="btn-secondary"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               {t('hero.quote')}
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <div className="glass-effect p-6 rounded-lg">
-              <div className="text-3xl font-bold gradient-text mb-2">10+</div>
-              <div className="text-muted-foreground">{t('hero.stats.experience')}</div>
+          {/* Stats Bar */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
+            <div className="glass-card p-8 rounded-3xl group">
+              <div className="text-4xl font-bold font-outfit text-white mb-2 group-hover:scale-110 transition-transform duration-300">10+</div>
+              <div className="text-sm font-bold uppercase tracking-widest text-cosmic-slate">{t('hero.stats.experience')}</div>
             </div>
-            <div className="glass-effect p-6 rounded-lg">
-              <div className="text-3xl font-bold gradient-text mb-2">50+</div>
-              <div className="text-muted-foreground">{t('hero.stats.projects')}</div>
+            <div className="glass-card p-8 rounded-3xl group">
+              <div className="text-4xl font-bold font-outfit text-white mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
+              <div className="text-sm font-bold uppercase tracking-widest text-cosmic-slate">{t('hero.stats.projects')}</div>
             </div>
-            <div className="glass-effect p-6 rounded-lg">
-              <div className="text-3xl font-bold gradient-text mb-2">24h</div>
-              <div className="text-muted-foreground">{t('hero.stats.response')}</div>
+            <div className="glass-card p-8 rounded-3xl group">
+              <div className="text-4xl font-bold font-outfit text-white mb-2 group-hover:scale-110 transition-transform duration-300">24h</div>
+              <div className="text-sm font-bold uppercase tracking-widest text-cosmic-slate">{t('hero.stats.response')}</div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
-        <div className="w-6 h-10 border-2 border-kazihub-gold rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-kazihub-gold rounded-full mt-2 animate-pulse"></div>
-        </div>
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3">
+        <span className="text-[10px] uppercase tracking-[0.3em] text-cosmic-slate font-bold">Scroll</span>
+        <div className="w-1 h-12 bg-gradient-to-b from-cosmic-indigo to-transparent rounded-full animate-pulse"></div>
       </div>
     </section>
   );

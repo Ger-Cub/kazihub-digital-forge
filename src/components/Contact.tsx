@@ -64,35 +64,35 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* CTA Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+    <section id="contact" className="py-32 relative overflow-hidden">
+      {/* Glow effect */}
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cosmic-pink/10 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-24 animate-fade-in">
+          <h2 className="text-5xl md:text-6xl font-bold font-outfit gradient-text mb-6">
             {t('cta.title')}
           </h2>
-          <p className="text-xl text-muted-foreground mb-8">
+          <div className="w-24 h-1 bg-gradient-to-r from-cosmic-indigo to-cosmic-violet mx-auto rounded-full mb-8"></div>
+          <p className="text-xl text-cosmic-slate max-w-2xl mx-auto font-medium">
             {t('cta.subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Contact Form */}
-          <div className="glass-effect p-8 rounded-2xl">
-            <h3 className="text-2xl font-bold text-foreground mb-6">{t('contact.title')}</h3>
+          <div className="glass-premium p-10 rounded-[2.5rem] relative order-2 lg:order-1 border border-white/5">
+            <h3 className="text-2xl font-bold font-outfit text-white mb-8">{t('contact.title')}</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <input type="hidden" name="access_key" value="2e250eed-85d5-4a23-9a4c-e97c662adc24" />
-              <div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
                   name="name"
                   placeholder={t('contact.name')}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="bg-accent/50 border-border text-foreground placeholder-muted-foreground"
+                  className="bg-white/[0.03] border-white/10 text-white placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo"
                 />
-              </div>
-              <div>
                 <Input
                   type="email"
                   name="email"
@@ -100,96 +100,74 @@ const Contact = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="bg-accent/50 border-border text-foreground placeholder-muted-foreground"
+                  className="bg-white/[0.03] border-white/10 text-white placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo"
                 />
               </div>
-              <div>
-                <Input
-                  name="company"
-                  placeholder={t('contact.company')}
-                  value={formData.company}
-                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  className="bg-accent/50 border-border text-foreground placeholder-muted-foreground"
-                />
-              </div>
-              <div>
-                <Textarea
-                  name="message"
-                  placeholder={t('contact.message')}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  required
-                  rows={4}
-                  className="bg-accent/50 border-border text-foreground placeholder-muted-foreground"
-                />
-              </div>
+              <Input
+                name="company"
+                placeholder={t('contact.company')}
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                className="bg-white/[0.03] border-white/10 text-white placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo"
+              />
+              <Textarea
+                name="message"
+                placeholder={t('contact.message')}
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                required
+                rows={5}
+                className="bg-white/[0.03] border-white/10 text-white placeholder-cosmic-slate rounded-2xl focus:ring-cosmic-indigo p-5"
+              />
               <Button
                 type="submit"
-                className="btn-primary w-full text-lg py-3"
+                className="btn-primary w-full h-16 text-lg rounded-2xl"
                 disabled={isLoading}
               >
-                {isLoading ? t('contact.sending') : t('contact.send')}
+                {isLoading ? t('contact.sending') : (
+                  <>
+                    <span>{t('contact.send')}</span>
+                    <span className="ml-2 group-hover:translate-x-2 transition-transform">↗</span>
+                  </>
+                )}
               </Button>
             </form>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-10 order-1 lg:order-2">
             {/* WhatsApp CTA */}
-            <div className="glass-effect p-8 rounded-2xl text-center">
-              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📱</span>
+            <div className="glass-card p-10 rounded-[2.5rem] text-center group border border-white/5">
+              <div className="w-20 h-20 bg-green-500/10 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:rotate-12 transition-transform duration-500">
+                <span className="text-4xl">📱</span>
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">{t('contact.direct.title')}</h3>
-              <p className="text-muted-foreground mb-6">{t('contact.direct.subtitle')}</p>
+              <h3 className="text-2xl font-bold font-outfit text-white mb-4">{t('contact.direct.title')}</h3>
+              <p className="text-cosmic-slate mb-8 font-medium">{t('contact.direct.subtitle')}</p>
               <Button
                 onClick={handleWhatsApp}
-                className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300"
+                className="bg-green-600 hover:bg-green-500 text-white font-bold h-16 px-10 rounded-2xl transition-all duration-300 shadow-xl shadow-green-600/20 w-full md:w-auto"
               >
                 {t('cta.whatsapp')} 📱
               </Button>
             </div>
 
             {/* Contact Details */}
-            <div className="glass-effect p-8 rounded-2xl">
-              <h3 className="text-xl font-bold text-foreground mb-6">{t('contact.info.title')}</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <span className="text-kazihub-gold">📧</span>
-                  <span className="text-muted-foreground">contact@kazihub.digital</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <span className="text-kazihub-gold">📱</span>
-                  <span className="text-muted-foreground">+243 991 102 448</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <span className="text-kazihub-gold">🌍</span>
-                  <span className="text-muted-foreground">Kinshasa, RD Congo</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <span className="text-kazihub-gold">⏰</span>
-                  <span className="text-muted-foreground">{t('footer.response')}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Features */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="glass-effect p-4 rounded-lg text-center">
-                <div className="text-2xl mb-2">🎯</div>
-                <div className="text-sm text-muted-foreground">{t('contact.feature.quote')}</div>
-              </div>
-              <div className="glass-effect p-4 rounded-lg text-center">
-                <div className="text-2xl mb-2">🚀</div>
-                <div className="text-sm text-muted-foreground">{t('contact.feature.start')}</div>
-              </div>
-              <div className="glass-effect p-4 rounded-lg text-center">
-                <div className="text-2xl mb-2">💡</div>
-                <div className="text-sm text-muted-foreground">{t('contact.feature.custom')}</div>
-              </div>
-              <div className="glass-effect p-4 rounded-lg text-center">
-                <div className="text-2xl mb-2">🤝</div>
-                <div className="text-sm text-muted-foreground">{t('contact.feature.support')}</div>
+            <div className="glass-card p-10 rounded-[2.5rem] border border-white/5">
+              <h3 className="text-xl font-bold font-outfit text-white mb-8 uppercase tracking-widest">{t('contact.info.title')}</h3>
+              <div className="space-y-6">
+                {[
+                  { icon: '📧', val: 'contact@kazihub.digital' },
+                  { icon: '📱', val: '+243 991 102 448' },
+                  { icon: '🌍', val: 'Kinshasa, RD Congo' },
+                  { icon: '⏰', val: t('footer.response') }
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center space-x-6 group">
+                    <div className="w-12 h-12 glass-premium rounded-xl flex items-center justify-center group-hover:bg-cosmic-indigo transition-colors duration-300">
+                      <span className="text-xl">{item.icon}</span>
+                    </div>
+                    <span className="text-cosmic-slate font-medium text-lg">{item.val}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

@@ -25,64 +25,73 @@ const SupportAutomation = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+    <div className="min-h-screen bg-cosmic-black text-white selection:bg-cosmic-indigo/30">
       <SEO titleKey="seo.support.title" descriptionKey="seo.support.description" />
       <Header />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative overflow-hidden">
+        {/* Glow effects */}
+        <div className="absolute top-20 left-0 w-96 h-96 bg-cosmic-indigo/10 rounded-full blur-[120px] -translate-x-1/2"></div>
+
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
+        <div className="text-center mb-24 animate-fade-in relative z-10">
+          <h1 className="text-5xl md:text-7xl font-bold font-outfit gradient-text mb-8 tracking-tight">
             Support & Automatisation
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="w-24 h-1.5 bg-gradient-to-r from-cosmic-indigo to-cosmic-violet mx-auto rounded-full mb-10"></div>
+          <p className="text-xl text-cosmic-slate max-w-3xl mx-auto font-medium leading-relaxed">
             Optimisez votre service client avec des solutions automatisées intelligentes et multilingues
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24 relative z-10">
           {services.map((service, index) => (
-            <div key={index} className="glass-effect p-6 rounded-2xl hover:scale-105 transition-transform">
-              <service.icon className="w-12 h-12 text-kazihub-emerald mb-4" />
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-muted-foreground">{service.desc}</p>
+            <div key={index} className="glass-card p-10 rounded-[2.5rem] group hover:-translate-y-2 transition-all duration-500">
+              <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-cosmic-indigo/20 group-hover:scale-110 transition-all duration-300">
+                <service.icon className="w-8 h-8 text-cosmic-indigo group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="text-2xl font-bold font-outfit mb-4 text-white group-hover:text-cosmic-indigo transition-colors">{service.title}</h3>
+              <p className="text-cosmic-slate font-medium leading-relaxed">{service.desc}</p>
             </div>
           ))}
         </div>
 
         {/* Benefits */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center gradient-text mb-12">Avantages</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mb-24 relative z-10">
+          <h2 className="text-4xl font-bold font-outfit text-center text-white mb-16 tracking-tight">Avantages</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {[
-              { title: 'Réduction des Coûts', desc: 'Diminuez vos coûts de support jusqu\'à 70%' },
-              { title: 'Satisfaction Client', desc: 'Réponse instantanée 24h/24, 7j/7' },
-              { title: 'Efficacité Optimale', desc: 'Automatisation des tâches répétitives' },
-              { title: 'Évolutivité', desc: 'Solutions qui grandissent avec votre business' }
+              { title: 'Réduction des Coûts', desc: 'Diminuez vos coûts de support jusqu\'à 70%', icon: '📉' },
+              { title: 'Satisfaction Client', desc: 'Réponse instantanée 24h/24, 7j/7', icon: '😊' },
+              { title: 'Efficacité Optimale', desc: 'Automatisation des tâches répétitives', icon: '⚡' },
+              { title: 'Évolutivité', desc: 'Solutions qui grandissent avec votre business', icon: '🚀' }
             ].map((benefit, index) => (
-              <div key={index} className="glass-effect p-6 rounded-2xl">
-                <h3 className="text-xl font-bold text-kazihub-gold mb-3">{benefit.title}</h3>
-                <p className="text-muted-foreground">{benefit.desc}</p>
+              <div key={index} className="glass-premium p-10 rounded-[2.5rem] border border-white/5 group hover:border-cosmic-indigo/30 transition-colors">
+                <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300 inline-block">{benefit.icon}</div>
+                <h3 className="text-2xl font-bold font-outfit text-white mb-4 group-hover:text-cosmic-indigo transition-colors">{benefit.title}</h3>
+                <p className="text-cosmic-slate font-medium leading-relaxed">{benefit.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* CTA Section */}
-        <div className="text-center glass-effect p-8 rounded-2xl bg-gradient-to-r from-kazihub-blue/20 to-kazihub-emerald/20">
-          <h2 className="text-3xl font-bold gradient-text mb-4">Automatisez votre support dès aujourd'hui</h2>
-          <p className="text-xl text-muted-foreground mb-8">Découvrez comment nos solutions peuvent transformer votre service client</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="text-center glass-premium p-16 rounded-[3rem] border border-white/10 relative overflow-hidden group">
+          <div className="absolute inset-0 bg-gradient-to-br from-cosmic-indigo/10 to-cosmic-violet/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          <h2 className="text-4xl font-bold font-outfit text-white mb-6 relative z-10 tracking-tight">Automatisez votre support dès aujourd'hui</h2>
+          <p className="text-xl text-cosmic-slate mb-10 relative z-10 font-medium">Découvrez comment nos solutions peuvent transformer votre service client</p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
             <Link
               to="/#contact"
-              className="btn-primary text-lg px-8 py-3 inline-block"
+              className="btn-primary h-16 px-12 text-lg rounded-2xl flex items-center justify-center min-w-[200px]"
               onClick={scrollToTop}
             >
-              Demander une Démo
+              <span>Demander une Démo</span>
+              <span className="ml-2">↗</span>
             </Link>
             <Link
               to="/pricing"
-              className="btn-secondary text-lg px-8 py-3 inline-block"
+              className="glass-premium h-16 px-12 text-lg rounded-2xl flex items-center justify-center hover:bg-white/5 border-white/10 min-w-[200px]"
               onClick={scrollToTop}
             >
               Voir les Tarifs

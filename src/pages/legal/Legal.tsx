@@ -6,74 +6,77 @@ import { SEO } from '../../components/SEO';
 
 const Legal = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+    <div className="min-h-screen bg-cosmic-black text-white selection:bg-cosmic-indigo/30">
       <SEO titleKey="seo.legal.title" descriptionKey="seo.legal.description" />
       <Header />
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h1 className="text-4xl font-bold gradient-text mb-8">Mentions Légales</h1>
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative overflow-hidden">
+        {/* Glow effects */}
+        <div className="absolute top-20 left-0 w-96 h-96 bg-cosmic-indigo/10 rounded-full blur-[120px] -translate-x-1/2"></div>
 
-        <div className="space-y-8 text-muted-foreground">
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">Éditeur du Site</h2>
-            <p className="mb-4">
-              <strong className="text-foreground">KaziHub Digital Agency</strong><br />
-              Agence de création numérique<br />
-              Kinshasa, République Démocratique du Congo<br />
-              Email : contact@kazihub.digital<br />
-              Téléphone : +243 991 102 448
-            </p>
-          </section>
+        <div className="relative z-10 glass-card p-10 md:p-16 rounded-[3rem] border border-white/5">
+          <h1 className="text-4xl md:text-5xl font-bold font-outfit gradient-text mb-12 tracking-tight">Mentions Légales</h1>
 
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">Directeur de Publication</h2>
-            <p>
-              Gerard Cubaka<br />
-              Fondateur & CEO<br />
-              KaziHub Digital Agency
-            </p>
-          </section>
+          <div className="space-y-12 text-cosmic-slate font-medium leading-relaxed">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <section className="glass-premium p-8 rounded-3xl border border-white/5">
+                <h2 className="text-xl font-bold font-outfit text-white mb-4 flex items-center">
+                  <span className="w-2 h-6 bg-cosmic-indigo rounded-full mr-3"></span>
+                  Éditeur du Site
+                </h2>
+                <p>
+                  <strong className="text-white font-bold block mb-2 text-lg">KaziHub Digital Agency</strong>
+                  Agence de création numérique<br />
+                  Kinshasa, RDC<br />
+                  <a href="mailto:contact@kazihub.digital" className="text-cosmic-indigo hover:underline">contact@kazihub.digital</a><br />
+                  +243 991 102 448
+                </p>
+              </section>
 
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">Hébergement</h2>
-            <p>
-              Nous hébergons vos site sur :<br />
-              <strong className="text-foreground">Hostinger</strong><br />
-              <strong className="text-foreground">Vercel</strong><br />
-              <strong className="text-foreground">GitHub</strong>.<br />
-              Pour plus d'informations sur leur politique de confidentialité, veuillez consulter leurs sites respectifs.
+              <section className="glass-premium p-8 rounded-3xl border border-white/5">
+                <h2 className="text-xl font-bold font-outfit text-white mb-4 flex items-center">
+                  <span className="w-2 h-6 bg-cosmic-violet rounded-full mr-3"></span>
+                  Direction
+                </h2>
+                <p>
+                  <strong className="text-white font-bold block mb-2 text-lg">Gerard Cubaka</strong>
+                  Fondateur & CEO<br />
+                  Visionnaire Digital
+                </p>
+              </section>
+            </div>
 
-            </p>
-          </section>
+            <section>
+              <h2 className="text-2xl font-bold font-outfit text-white mb-6">Hébergement & Infrastructure</h2>
+              <p className="mb-6">Nos infrastructures reposent sur des leaders mondiaux garantissant une disponibilité de 99.9% :</p>
+              <div className="flex flex-wrap gap-4">
+                {['Hostinger', 'Vercel', 'GitHub'].map(host => (
+                  <div key={host} className="px-6 py-3 glass-premium rounded-xl border border-white/10 font-bold text-white">
+                    {host}
+                  </div>
+                ))}
+              </div>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">Propriété Intellectuelle</h2>
-            <p>
-              L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.
-            </p>
-          </section>
+            <section>
+              <h2 className="text-2xl font-bold font-outfit text-white mb-6">Propriété Intellectuelle</h2>
+              <p>
+                L'architecture visuelle, les algorithmes et les contenus de cette plateforme sont protégés par les lois internationales sur la propriété intellectuelle. Toute reproduction non autorisée constitue une dérive hors orbite légale.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">Données Personnelles</h2>
-            <p>
-              Les informations recueillies sur ce site sont enregistrées dans un fichier informatisé par KaziHub Digital Agency pour la gestion des demandes de contact et de devis. Elles sont conservées pendant 3 ans et sont destinées uniquement à notre équipe commerciale.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">Cookies</h2>
-            <p>
-              Ce site utilise des cookies pour améliorer l'expérience utilisateur et analyser le trafic. En continuant à naviguer sur ce site, vous acceptez l'utilisation des cookies.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">Responsabilité</h2>
-            <p>
-              Les informations contenues sur ce site sont aussi précises que possible et le site remis à jour à différentes périodes de l'année, mais peut toutefois contenir des inexactitudes ou des omissions.
-            </p>
-          </section>
+            <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="glass-premium p-8 rounded-3xl border border-white/5">
+                <h2 className="text-xl font-bold font-outfit text-white mb-4">Données</h2>
+                <p className="text-sm">Conservées pendant 3 ans pour l'optimisation de nos relations commerciales.</p>
+              </div>
+              <div className="glass-premium p-8 rounded-3xl border border-white/5">
+                <h2 className="text-xl font-bold font-outfit text-white mb-4">Cookies</h2>
+                <p className="text-sm">Utilisés exclusivement pour affiner votre trajectoire sur notre interface.</p>
+              </div>
+            </section>
+          </div>
         </div>
-      </div>
+      </main>
       <Footer />
     </div>
   );

@@ -20,78 +20,87 @@ const StrategicConsulting = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+    <div className="min-h-screen bg-cosmic-black text-white selection:bg-cosmic-indigo/30">
       <SEO titleKey="seo.consulting.title" descriptionKey="seo.consulting.description" />
       <Header />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative overflow-hidden">
+        {/* Glow effects */}
+        <div className="absolute top-20 right-0 w-96 h-96 bg-cosmic-indigo/10 rounded-full blur-[120px] translate-x-1/2"></div>
+
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
+        <div className="text-center mb-24 animate-fade-in relative z-10">
+          <h1 className="text-5xl md:text-7xl font-bold font-outfit gradient-text mb-8 tracking-tight">
             Conseil Stratégique
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="w-24 h-1.5 bg-gradient-to-r from-cosmic-indigo to-cosmic-violet mx-auto rounded-full mb-10"></div>
+          <p className="text-xl text-cosmic-slate max-w-3xl mx-auto font-medium leading-relaxed">
             Accompagnement personnalisé pour accélérer votre transformation digitale et maximiser votre impact
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24 relative z-10">
           {services.map((service, index) => (
-            <div key={index} className="glass-effect p-6 rounded-2xl hover:scale-105 transition-transform">
-              <service.icon className="w-12 h-12 text-kazihub-gold mb-4" />
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-muted-foreground">{service.desc}</p>
+            <div key={index} className="glass-card p-10 rounded-[2.5rem] group hover:-translate-y-2 transition-all duration-500">
+              <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-cosmic-indigo/20 group-hover:scale-110 transition-all duration-300">
+                <service.icon className="w-8 h-8 text-cosmic-indigo group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="text-2xl font-bold font-outfit mb-4 text-white group-hover:text-cosmic-indigo transition-colors">{service.title}</h3>
+              <p className="text-cosmic-slate font-medium leading-relaxed">{service.desc}</p>
             </div>
           ))}
         </div>
 
         {/* Methodology */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center gradient-text mb-12">Notre Méthodologie</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="mb-24 relative z-10">
+          <h2 className="text-4xl font-bold font-outfit text-center text-white mb-16 tracking-tight">Notre Méthodologie</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             {[
               { step: '01', title: 'Diagnostic', desc: 'Analyse complète de votre situation actuelle' },
               { step: '02', title: 'Stratégie', desc: 'Élaboration d\'un plan d\'action personnalisé' },
               { step: '03', title: 'Mise en Œuvre', desc: 'Accompagnement dans l\'implémentation' },
               { step: '04', title: 'Suivi', desc: 'Monitoring et optimisation continue' }
             ].map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-kazihub-gold to-kazihub-emerald rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-kazihub-dark font-bold text-xl">{step.step}</span>
+              <div key={index} className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-cosmic-indigo to-cosmic-violet rounded-3xl rotate-6 group-hover:rotate-0 flex items-center justify-center mx-auto mb-8 shadow-xl shadow-cosmic-indigo/20 transition-transform duration-500">
+                  <span className="text-white font-bold font-outfit text-2xl">{step.step}</span>
                 </div>
-                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                <p className="text-muted-foreground">{step.desc}</p>
+                <h3 className="text-xl font-bold font-outfit text-white mb-3 tracking-wide">{step.title}</h3>
+                <p className="text-cosmic-slate font-medium">{step.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Sectors */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center gradient-text mb-12">Secteurs d'Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mb-24 relative z-10">
+          <h2 className="text-4xl font-bold font-outfit text-center text-white mb-16 tracking-tight">Secteurs d'Expertise</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { title: 'PME & Startups', desc: 'Accompagnement spécialisé pour les jeunes entreprises' },
-              { title: 'E-commerce', desc: 'Stratégies de vente en ligne adaptées à l\'Afrique' },
-              { title: 'Services Financiers', desc: 'Digitalisation des services bancaires et fintech' }
+              { title: 'PME & Startups', desc: 'Accompagnement spécialisé pour les jeunes entreprises', icon: '🏢' },
+              { title: 'E-commerce', desc: 'Stratégies de vente en ligne adaptées à l\'Afrique', icon: '🛒' },
+              { title: 'Services Financiers', desc: 'Digitalisation des services bancaires et fintech', icon: '💳' }
             ].map((sector, index) => (
-              <div key={index} className="glass-effect p-6 rounded-2xl text-center">
-                <h3 className="text-xl font-bold text-kazihub-emerald mb-3">{sector.title}</h3>
-                <p className="text-muted-foreground">{sector.desc}</p>
+              <div key={index} className="glass-card p-10 rounded-[2.5rem] text-center border border-white/5 hover:border-cosmic-indigo/30 transition-colors group">
+                <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300 inline-block">{sector.icon}</div>
+                <h3 className="text-2xl font-bold font-outfit text-white mb-4 group-hover:text-cosmic-indigo transition-colors">{sector.title}</h3>
+                <p className="text-cosmic-slate font-medium leading-relaxed">{sector.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* CTA Section */}
-        <div className="text-center glass-effect p-8 rounded-2xl">
-          <h2 className="text-3xl font-bold gradient-text mb-4">Prêt à transformer votre entreprise ?</h2>
-          <p className="text-xl text-muted-foreground mb-8">Planifiez un audit gratuit avec nos experts</p>
+        <div className="text-center glass-premium p-16 rounded-[3rem] border border-white/10 relative overflow-hidden group">
+          <div className="absolute inset-0 bg-gradient-to-br from-cosmic-indigo/10 to-cosmic-violet/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          <h2 className="text-4xl font-bold font-outfit text-white mb-6 relative z-10 tracking-tight">Prêt à transformer votre entreprise ?</h2>
+          <p className="text-xl text-cosmic-slate mb-10 relative z-10 font-medium">Planifiez un audit gratuit avec nos experts</p>
           <Link
             to="/#contact"
-            className="btn-primary text-lg px-8 py-3 inline-block"
+            className="btn-primary h-16 px-12 text-lg rounded-2xl relative z-10 inline-flex items-center justify-center"
           >
-            Réserver un Audit Gratuit
+            <span>Réserver un Audit Gratuit</span>
+            <span className="ml-2">↗</span>
           </Link>
         </div>
       </div>

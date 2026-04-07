@@ -24,38 +24,56 @@ const ProjectsCarousel = () => {
   };
 
   return (
-    <div className="relative bg-kazihub-dark py-12 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl font-bold text-center gradient-text mb-8">Nos Réalisations</h2>
-      <div className="relative">
-        {/* Boutons de navigation */}
-        <button
-          onClick={scrollLeft}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-kazihub-gold text-white p-2 rounded-full shadow-lg hover:bg-kazihub-emerald transition z-10"
-        >
-          ◀
-        </button>
-        <button
-          onClick={scrollRight}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-kazihub-gold text-white p-2 rounded-full shadow-lg hover:bg-kazihub-emerald transition z-10"
-        >
-          ▶
-        </button>
+    <div className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="animate-fade-in text-left">
+            <h2 className="text-4xl md:text-5xl font-bold font-outfit gradient-text mb-4">Nos Réalisations</h2>
+            <p className="text-cosmic-slate font-medium max-w-xl">Découvrez comment nous transformons les idées en solutions digitales exceptionnelles.</p>
+          </div>
 
-        {/* Carousel */}
-        <div
-          ref={carouselRef}
-          className="flex items-center space-x-8 overflow-x-hidden scrollbar-hide"
-        >
-          {projects.map((project, index) => (
-            <div key={index} className="min-w-[300px] flex-shrink-0">
-              <img
-                src={project.image}
-                alt={project.name}
-                className="w-full h-48 object-cover rounded-lg shadow-lg"
-              />
-              <h3 className="text-lg font-semibold text-white mt-4 text-center">{project.name}</h3>
-            </div>
-          ))}
+          {/* Boutons de navigation */}
+          <div className="flex space-x-4">
+            <button
+              onClick={scrollLeft}
+              className="w-12 h-12 glass-premium text-white flex items-center justify-center rounded-xl hover:bg-cosmic-indigo transition-all duration-300 shadow-lg group"
+            >
+              <span className="group-hover:-translate-x-1 transition-transform">◀</span>
+            </button>
+            <button
+              onClick={scrollRight}
+              className="w-12 h-12 glass-premium text-white flex items-center justify-center rounded-xl hover:bg-cosmic-indigo transition-all duration-300 shadow-lg group"
+            >
+              <span className="group-hover:translate-x-1 transition-transform">▶</span>
+            </button>
+          </div>
+        </div>
+
+        <div className="relative">
+          {/* Carousel */}
+          <div
+            ref={carouselRef}
+            className="flex items-stretch space-x-8 overflow-x-hidden scrollbar-hide py-4"
+          >
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="min-w-[320px] md:min-w-[400px] flex-shrink-0 glass-card p-4 rounded-[2rem] group cursor-pointer"
+              >
+                <div className="relative overflow-hidden rounded-[1.5rem] mb-6 aspect-video">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-cosmic-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <span className="text-white font-bold font-outfit tracking-wider uppercase text-xs">Voir le projet</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold font-outfit text-white px-2 group-hover:text-cosmic-indigo transition-colors">{project.name}</h3>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -67,13 +67,14 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-kazihub-dark">
+    <section id="services" className="py-32 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+        <div className="text-center mb-24 animate-fade-in">
+          <h2 className="text-5xl md:text-6xl font-bold font-outfit gradient-text mb-6">
             {t('services.title')}
           </h2>
-          <p className="text-xl text-gray-300">
+          <div className="w-24 h-1 bg-gradient-to-r from-cosmic-indigo to-cosmic-violet mx-auto rounded-full mb-8"></div>
+          <p className="text-xl text-cosmic-slate max-w-3xl mx-auto font-medium">
             {t('services.subtitle')}
           </p>
         </div>
@@ -82,27 +83,30 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="glass-effect p-6 rounded-2xl hover:scale-105 transition-all duration-300 group"
+              className="glass-card p-10 rounded-[2rem] hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden"
             >
-              <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <span className="text-2xl">{service.icon}</span>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br opacity-5 group-hover:opacity-10 transition-opacity duration-500 blur-2xl -mr-16 -mt-16 rounded-full group-hover:scale-150 transform transition-transform duration-700"></div>
+
+              <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:rotate-6 transition-transform duration-300`}>
+                <span className="text-3xl">{service.icon}</span>
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-4">
+              <h3 className="text-2xl font-bold font-outfit text-white mb-4 group-hover:text-cosmic-indigo transition-colors duration-300">
                 {t(service.titleKey)}
               </h3>
 
-              <p className="text-gray-300 leading-relaxed mb-6">
+              <p className="text-cosmic-slate leading-relaxed mb-8 font-medium">
                 {t(service.descKey)}
               </p>
 
-              <div className="mt-6">
+              <div className="mt-auto">
                 <Link
                   to={service.link}
                   onClick={scrollToTop}
-                  className="text-kazihub-gold hover:text-kazihub-emerald transition-colors duration-200 font-semibold"
+                  className="inline-flex items-center text-cosmic-indigo hover:text-cosmic-pink transition-all duration-300 font-bold uppercase tracking-widest text-xs gap-2 group/link"
                 >
-                  {t('services.more')} →
+                  {t('services.more')}
+                  <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
                 </Link>
               </div>
             </div>
@@ -110,12 +114,17 @@ const Services = () => {
         </div>
 
         {/* Technologies */}
-        <div className="mt-20 text-center">
-          <h3 className="text-2xl font-bold text-foreground mb-8">{t('services.tech.title')}</h3>
-          <div className="flex flex-wrap justify-center gap-4">
+        <div className="mt-32 text-center animate-fade-in">
+          <h3 className="text-sm font-bold uppercase tracking-[0.3em] text-white/40 mb-12">
+            {t('services.tech.title')}
+          </h3>
+          <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
             {technologies.map((tech) => (
-              <span key={tech.name} className="glass-effect px-4 py-2 rounded-full text-sm text-kazihub-gold flex items-center gap-2">
-                <span className="text-lg">{tech.icon}</span>
+              <span
+                key={tech.name}
+                className="glass-premium px-6 py-3 rounded-2xl text-sm font-bold text-cosmic-slate flex items-center gap-3 hover:bg-white/5 hover:text-white hover:scale-105 transition-all duration-300 border border-white/5"
+              >
+                <span className="text-xl group-hover:scale-110 transition-transform">{tech.icon}</span>
                 {tech.name}
               </span>
             ))}

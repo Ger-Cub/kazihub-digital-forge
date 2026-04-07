@@ -11,120 +11,100 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-background border-t border-border transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="py-20 relative overflow-hidden border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
           {/* Logo & Description */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-kazihub-gold to-kazihub-emerald rounded-lg flex items-center justify-center">
-                <span className="text-kazihub-dark font-bold text-xl">K</span>
+            <Link to="/" className="flex items-center space-x-4 mb-8 group" onClick={scrollToTop}>
+              <div className="w-12 h-12 bg-gradient-to-br from-cosmic-indigo to-cosmic-violet rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white font-bold text-2xl font-outfit">K</span>
               </div>
               <div>
-                <h1 className="text-xl font-bold gradient-text">KaziHub</h1>
-                <p className="text-xs text-muted-foreground">Digital Agency</p>
+                <h1 className="text-2xl font-bold font-outfit text-white tracking-tight">KaziHub</h1>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-cosmic-slate font-bold">Digital Forge</p>
               </div>
-            </div>
-            <p className="text-muted-foreground mb-6 max-w-md">
+            </Link>
+            <p className="text-cosmic-slate mb-10 max-w-sm leading-relaxed font-medium">
               {t('footer.description')}
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-kazihub-blue rounded-full flex items-center justify-center hover:bg-kazihub-gold transition-colors">
-                <span className="text-white">💼</span>
-              </a>
-              <a href="#" className="w-10 h-10 bg-kazihub-blue rounded-full flex items-center justify-center hover:bg-kazihub-gold transition-colors">
-                <span className="text-white">🐙</span>
-              </a>
-              <a href="#" className="w-10 h-10 bg-kazihub-blue rounded-full flex items-center justify-center hover:bg-kazihub-gold transition-colors">
-                <span className="text-white">✉️</span>
-              </a>
-              <a href={`https://wa.me/+243991102448`} className="w-10 h-10 bg-kazihub-blue rounded-full flex items-center justify-center hover:bg-kazihub-gold transition-colors">
-                <span className="text-white">📱</span>
-              </a>
+            <div className="flex space-x-5">
+              {[
+                { icon: '💼', link: '#' },
+                { icon: '🐙', link: '#' },
+                { icon: '✉️', link: '#' },
+                { icon: '📱', link: `https://wa.me/+243991102448` }
+              ].map((social, i) => (
+                <a
+                  key={i}
+                  href={social.link}
+                  className="w-12 h-12 glass-premium rounded-xl flex items-center justify-center hover:bg-cosmic-indigo transition-all duration-300 hover:-translate-y-1 shadow-lg"
+                >
+                  <span className="text-xl">{social.icon}</span>
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">{t('footer.services')}</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/services/web-development"
-                  className="text-muted-foreground hover:text-kazihub-gold transition-colors"
-                  onClick={scrollToTop}
-                >
-                  {t('services.web.title')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services/ai-agents"
-                  className="text-muted-foreground hover:text-kazihub-gold transition-colors"
-                  onClick={scrollToTop}
-                >
-                  {t('services.ai.title')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services/digital-marketing"
-                  className="text-muted-foreground hover:text-kazihub-gold transition-colors"
-                  onClick={scrollToTop}
-                >
-                  {t('services.marketing.title')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services/support-automation"
-                  className="text-muted-foreground hover:text-kazihub-gold transition-colors"
-                  onClick={scrollToTop}
-                >
-                  {t('services.support.title')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services/strategic-consulting"
-                  className="text-muted-foreground hover:text-kazihub-gold transition-colors"
-                  onClick={scrollToTop}
-                >
-                  {t('services.consulting.title')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services/ux-ui-design"
-                  className="text-muted-foreground hover:text-kazihub-gold transition-colors"
-                  onClick={scrollToTop}
-                >
-                  {t('services.design.title')}
-                </Link>
-              </li>
+            <h3 className="text-sm font-bold text-white uppercase tracking-[0.2em] mb-8">{t('footer.services')}</h3>
+            <ul className="space-y-4">
+              {[
+                { to: '/services/web-development', key: 'services.web.title' },
+                { to: '/services/ai-agents', key: 'services.ai.title' },
+                { to: '/services/digital-marketing', key: 'services.marketing.title' },
+                { to: '/services/support-automation', key: 'services.support.title' },
+                { to: '/services/strategic-consulting', key: 'services.consulting.title' },
+                { to: '/services/ux-ui-design', key: 'services.design.title' }
+              ].map((link) => (
+                <li key={link.key}>
+                  <Link
+                    to={link.to}
+                    className="text-cosmic-slate hover:text-cosmic-indigo transition-colors duration-300 font-medium"
+                    onClick={scrollToTop}
+                  >
+                    {t(link.key)}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">{t('footer.contact')}</h3>
-            <ul className="space-y-2">
-              <li className="text-muted-foreground">📧 contact@kazihub.digital</li>
-              <li className="text-muted-foreground">📱 +243 991 102 448</li>
-              <li className="text-muted-foreground">🌍 Kinshasa, RD Congo</li>
-              <li className="text-muted-foreground">⏰ {t('footer.response')}</li>
+            <h3 className="text-sm font-bold text-white uppercase tracking-[0.2em] mb-8">{t('footer.contact')}</h3>
+            <ul className="space-y-5">
+              {[
+                { icon: '📧', val: 'contact@kazihub.digital' },
+                { icon: '📱', val: '+243 991 102 448' },
+                { icon: '🌍', val: 'Kinshasa, RD Congo' },
+                { icon: '⏰', val: t('footer.response') }
+              ].map((item, i) => (
+                <li key={i} className="flex items-center space-x-3 text-cosmic-slate font-medium">
+                  <span className="text-white/40">{item.icon}</span>
+                  <span>{item.val}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm">
+        <div className="border-t border-white/5 mt-20 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-cosmic-slate/60 text-sm font-medium">
             © 2024 KaziHub Digital Agency. {t('footer.rights')}
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/legal" className="text-muted-foreground hover:text-kazihub-gold text-sm transition-colors" onClick={scrollToTop}>{t('footer.legal')}</Link>
-            <Link to="/privacy" className="text-muted-foreground hover:text-kazihub-gold text-sm transition-colors" onClick={scrollToTop}>{t('footer.privacy')}</Link>
-            <Link to="/terms" className="text-muted-foreground hover:text-kazihub-gold text-sm transition-colors" onClick={scrollToTop}>{t('footer.terms')}</Link>
+          <div className="flex space-x-8">
+            {['legal', 'privacy', 'terms'].map((key) => (
+              <Link
+                key={key}
+                to={`/${key}`}
+                className="text-cosmic-slate/60 hover:text-white text-xs font-bold uppercase tracking-widest transition-colors"
+                onClick={scrollToTop}
+              >
+                {t(`footer.${key}`)}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
