@@ -35,6 +35,23 @@ const translations = {
     'about.founder': 'Gerard Cubaka',
     'about.founder.title': 'CEO & Fondateur',
     'about.founder.bio': 'Développeur africain avec plus de 10 ans d\'expérience dans les technologies web, mobiles et l\'intelligence artificielle.',
+    'about.bestProject.title': 'Meilleure réalisation de l\'année',
+    'about.bestProject.name': 'GeoCongo AI',
+    'about.bestProject.desc': 'Plateforme d\'intelligence géologique alimentée par l\'IA pour l\'exploration minière en RDC et en Afrique.',
+    'about.bestProject.features': 'Intégration de données satellites, agents IA spécialisés et renforcement des capacités.',
+    'about.bestProject.cta': 'Visiter le projet',
+
+    // Team
+    'team.title': 'Notre Équipe',
+    'team.subtitle': 'Les talents qui façonnent l\'innovation numérique',
+    'team.member1.name': 'Jean-Luc Mpande',
+    'team.member1.role': 'Directeur Technique',
+    'team.member2.name': 'Sarah Kalenga',
+    'team.member2.role': 'Product Manager',
+    'team.member3.name': 'Marc Bakary',
+    'team.member3.role': 'Expert en IA',
+    'team.member4.name': 'Elena Mutombo',
+    'team.member4.role': 'UX/UI Designer',
 
     // Services
     'services.title': 'Nos Services',
@@ -182,6 +199,23 @@ const translations = {
     'about.founder': 'Gerard Cubaka',
     'about.founder.title': 'CEO & Founder',
     'about.founder.bio': 'African developer with over 10 years of experience in web, mobile, and AI technologies.',
+    'about.bestProject.title': 'Best Project of the Year',
+    'about.bestProject.name': 'GeoCongo AI',
+    'about.bestProject.desc': 'AI-powered geological intelligence platform for mineral exploration in the DRC and Africa.',
+    'about.bestProject.features': 'Satellite data integration, specialized AI agents, and capacity building.',
+    'about.bestProject.cta': 'Visit Project',
+
+    // Team
+    'team.title': 'Our Team',
+    'team.subtitle': 'The talents shaping digital innovation',
+    'team.member1.name': 'Jean-Luc Mpande',
+    'team.member1.role': 'Technical Director',
+    'team.member2.name': 'Sarah Kalenga',
+    'team.member2.role': 'Product Manager',
+    'team.member3.name': 'Marc Bakary',
+    'team.member3.role': 'AI Expert',
+    'team.member4.name': 'Elena Mutombo',
+    'team.member4.role': 'UX/UI Designer',
 
     // Services
     'services.title': 'Our Services',

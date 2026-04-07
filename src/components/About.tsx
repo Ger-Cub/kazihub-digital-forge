@@ -47,44 +47,46 @@ const About = () => {
             </div>
           </div>
 
-          {/* Founder Card */}
+          {/* Project of the Year Card */}
           <div className="relative group animate-fade-in">
             <div className="absolute inset-0 bg-gradient-to-br from-cosmic-indigo/20 to-cosmic-violet/20 blur-3xl group-hover:scale-110 transition-transform duration-700 opacity-50"></div>
             <div className="glass-premium p-10 rounded-[2.5rem] relative z-10 border border-white/10 group-hover:border-white/20 transition-colors duration-500 shadow-2xl">
               <div className="text-center">
-                <div className="w-40 h-40 mx-auto mb-8 rounded-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500 overflow-hidden bg-gradient-to-br from-cosmic-indigo to-cosmic-violet p-1.5 shadow-2xl">
-                  <img
-                    src="/lovable-uploads/ceo-modern-v2.png"
-                    alt={t('about.founder')}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
+                <div className="inline-block px-4 py-1.5 rounded-full bg-cosmic-indigo/20 border border-cosmic-indigo/30 text-cosmic-indigo font-bold text-xs uppercase tracking-widest mb-6">
+                  {t('about.bestProject.title')}
                 </div>
-                <h3 className="text-3xl font-bold font-outfit text-white mb-2">
-                  {t('about.founder')}
+
+                <div className="w-full aspect-video mx-auto mb-8 rounded-2xl rotate-1 group-hover:rotate-0 transition-transform duration-500 overflow-hidden bg-gradient-to-br from-cosmic-indigo to-cosmic-violet p-1 shadow-2xl">
+                  <div className="w-full h-full bg-cosmic-black rounded-xl overflow-hidden relative">
+                    {/* Placeholder for project visual - using a gradient/pattern for now */}
+                    <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.4)_0,transparent_70%)]"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-6xl group-hover:scale-110 transition-transform duration-700">🌍</span>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 className="text-4xl font-bold font-outfit text-white mb-4">
+                  {t('about.bestProject.name')}
                 </h3>
-                <p className="text-cosmic-indigo font-bold uppercase tracking-widest text-sm mb-6">
-                  {t('about.founder.title')}
-                </p>
-                <p className="text-cosmic-slate leading-relaxed mb-8 italic">
-                  "{t('about.founder.bio')}"
+
+                <p className="text-cosmic-slate leading-relaxed mb-6 font-medium">
+                  {t('about.bestProject.desc')}
                 </p>
 
-                {/* Social links */}
-                <div className="flex justify-center space-x-5">
-                  {[
-                    { icon: '💼', link: '#' },
-                    { icon: '🐙', link: '#' },
-                    { icon: '✉️', link: '#' }
-                  ].map((social, i) => (
-                    <a
-                      key={i}
-                      href={social.link}
-                      className="w-12 h-12 glass-premium rounded-full flex items-center justify-center hover:bg-cosmic-indigo transition-all duration-300 hover:-translate-y-1 shadow-lg"
-                    >
-                      <span className="text-xl">{social.icon}</span>
-                    </a>
-                  ))}
+                <div className="text-sm text-white/60 mb-8 p-4 rounded-xl bg-white/5 border border-white/5">
+                  {t('about.bestProject.features')}
                 </div>
+
+                <a
+                  href="https://geocongoai.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary w-full group"
+                >
+                  <span>{t('about.bestProject.cta')}</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
               </div>
             </div>
           </div>

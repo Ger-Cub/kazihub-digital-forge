@@ -3,8 +3,9 @@ import { SEO } from '../components/SEO';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
+import Team from '../components/Team';
 import Services from '../components/Services';
-import ProjectsCarousel from '../components/ProjectsCarousel'; // Import du composant
+import ProjectsCarousel from '../components/ProjectsCarousel';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
@@ -16,8 +17,9 @@ const Index = () => {
       <main>
         <Hero />
         <About />
+        <Team />
         <Services />
-        <ProjectsCarousel /> {/* Ajout du composant ici */}
+        <ProjectsCarousel />
         <Contact />
       </main>
       <Footer />
