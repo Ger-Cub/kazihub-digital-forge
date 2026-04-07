@@ -58,11 +58,11 @@ const About = () => {
 
                 <div className="w-full aspect-video mx-auto mb-8 rounded-2xl rotate-1 group-hover:rotate-0 transition-transform duration-500 overflow-hidden bg-gradient-to-br from-cosmic-indigo to-cosmic-violet p-1 shadow-2xl">
                   <div className="w-full h-full bg-cosmic-black rounded-xl overflow-hidden relative">
-                    {/* Placeholder for project visual - using a gradient/pattern for now */}
-                    <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.4)_0,transparent_70%)]"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-6xl group-hover:scale-110 transition-transform duration-700">🌍</span>
-                    </div>
+                    <img
+                      src="/projects/geocongo-chat.png"
+                      alt="GeoCongo AI Chat Interface"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
                   </div>
                 </div>
 

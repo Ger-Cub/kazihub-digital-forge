@@ -9,7 +9,7 @@ const ProjectsCarousel = () => {
   const projects = [
     {
       name: 'GeoCongo AI',
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800&h=450',
+      image: '/projects/geocongo-map.png',
       category: 'Intelligence Artificielle',
       link: 'https://geocongoai.com'
     },
