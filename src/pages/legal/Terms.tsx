@@ -39,7 +39,7 @@ const Terms = () => {
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Article 4 - Prix et Paiement</h2>
-            <p className="mb-4">Les prix sont exprimés en euros, hors taxes. Les modalités de paiement sont :</p>
+            <p className="mb-4">Les prix sont exprimés en USD, hors taxes. Les modalités de paiement sont :</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>30% d'acompte à la commande</li>
               <li>40% en cours de réalisation</li>

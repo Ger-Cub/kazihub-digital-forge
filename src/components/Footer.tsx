@@ -1,10 +1,14 @@
-
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t } = useLanguage();
+
+  // Function to scroll to the top of the page
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <footer className="bg-kazihub-dark border-t border-gray-800">
@@ -44,12 +48,60 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
             <ul className="space-y-2">
-              <li><Link to="/services/web-development" className="text-gray-400 hover:text-kazihub-gold transition-colors">Développement Web & Mobile</Link></li>
-              <li><Link to="/services/ai-agents" className="text-gray-400 hover:text-kazihub-gold transition-colors">Agents IA Personnalisés</Link></li>
-              <li><Link to="/services/digital-marketing" className="text-gray-400 hover:text-kazihub-gold transition-colors">Marketing Digital & IA</Link></li>
-              <li><Link to="/services/support-automation" className="text-gray-400 hover:text-kazihub-gold transition-colors">Support & Automatisation</Link></li>
-              <li><Link to="/services/strategic-consulting" className="text-gray-400 hover:text-kazihub-gold transition-colors">Conseil Stratégique</Link></li>
-              <li><Link to="/services/ux-ui-design" className="text-gray-400 hover:text-kazihub-gold transition-colors">UX/UI Design</Link></li>
+              <li>
+                <Link 
+                  to="/services/web-development" 
+                  className="text-gray-400 hover:text-kazihub-gold transition-colors"
+                  onClick={scrollToTop}
+                >
+                  Développement Web & Mobile
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/services/ai-agents" 
+                  className="text-gray-400 hover:text-kazihub-gold transition-colors"
+                  onClick={scrollToTop}
+                >
+                  Agents IA Personnalisés
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/services/digital-marketing" 
+                  className="text-gray-400 hover:text-kazihub-gold transition-colors"
+                  onClick={scrollToTop}
+                >
+                  Marketing Digital & IA
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/services/support-automation" 
+                  className="text-gray-400 hover:text-kazihub-gold transition-colors"
+                  onClick={scrollToTop}
+                >
+                  Support & Automatisation
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/services/strategic-consulting" 
+                  className="text-gray-400 hover:text-kazihub-gold transition-colors"
+                  onClick={scrollToTop}
+                >
+                  Conseil Stratégique
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/services/ux-ui-design" 
+                  className="text-gray-400 hover:text-kazihub-gold transition-colors"
+                  onClick={scrollToTop}
+                >
+                  UX/UI Design
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -70,9 +122,9 @@ const Footer = () => {
             © 2024 KaziHub Digital Agency. {t('footer.rights')}
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/legal" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors">Mentions légales</Link>
-            <Link to="/privacy" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors">Confidentialité</Link>
-            <Link to="/terms" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors">CGV</Link>
+            <Link to="/legal" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors" onClick={scrollToTop}>Mentions légales</Link>
+            <Link to="/privacy" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors" onClick={scrollToTop}>Confidentialité</Link>
+            <Link to="/terms" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors" onClick={scrollToTop}>CGV</Link>
           </div>
         </div>
       </div>

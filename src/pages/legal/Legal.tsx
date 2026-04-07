@@ -34,10 +34,12 @@ const Legal = () => {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Hébergement</h2>
             <p>
-              Ce site est hébergé par :<br/>
-              <strong className="text-white">Lovable</strong><br/>
-              Plateforme de développement web<br/>
-              https://lovable.dev
+              Nous hébergons vos site sur :<br/>
+              <strong className="text-white">Hostinger</strong><br/>
+              <strong className="text-white">Vercel</strong><br/>
+              <strong className="text-white">GitHub</strong>.<br/>
+              Pour plus d'informations sur leur politique de confidentialité, veuillez consulter leurs sites respectifs.
+              
             </p>
           </section>
 

@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Headphones, Bot, Clock, Users, MessageSquare, Settings } from 'lucide-react';
 import { Button } from '../../components/ui/button';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { Link } from 'react-router-dom';
 
 const SupportAutomation = () => {
   const { t } = useLanguage();
@@ -17,6 +17,11 @@ const SupportAutomation = () => {
     { icon: MessageSquare, title: 'Tickets Automatiques', desc: 'Système de ticketing et résolution automatique' },
     { icon: Settings, title: 'Intégrations API', desc: 'Connexion avec vos outils existants' }
   ];
+
+  // Function to scroll to the top of the page
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="min-h-screen bg-kazihub-dark text-white">
@@ -66,8 +71,20 @@ const SupportAutomation = () => {
           <h2 className="text-3xl font-bold gradient-text mb-4">Automatisez votre support dès aujourd'hui</h2>
           <p className="text-xl text-gray-300 mb-8">Découvrez comment nos solutions peuvent transformer votre service client</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="btn-primary">Demander une Démo</Button>
-            <Button className="btn-secondary">Voir les Tarifs</Button>
+            <Link 
+              to="/#contact" 
+              className="btn-primary text-lg px-8 py-3 inline-block"
+              onClick={scrollToTop}
+            >
+              Demander une Démo
+            </Link>
+            <Link 
+              to="/pricing" 
+              className="btn-secondary text-lg px-8 py-3 inline-block"
+              onClick={scrollToTop}
+            >
+              Voir les Tarifs
+            </Link>
           </div>
         </div>
       </div>

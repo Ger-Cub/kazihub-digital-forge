@@ -1,10 +1,14 @@
-
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
   const { t } = useLanguage();
+
+  // Function to scroll to the top of the page
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const services = [
     {
@@ -95,6 +99,7 @@ const Services = () => {
               <div className="mt-6">
                 <Link 
                   to={service.link}
+                  onClick={scrollToTop}
                   className="text-kazihub-gold hover:text-kazihub-emerald transition-colors duration-200 font-semibold"
                 >
                   En savoir plus →

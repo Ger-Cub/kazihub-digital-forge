@@ -16,6 +16,7 @@ import UXUIDesign from "./pages/services/UXUIDesign";
 import Legal from "./pages/legal/Legal";
 import Privacy from "./pages/legal/Privacy";
 import Terms from "./pages/legal/Terms";
+import Pricing from "./pages/Pricing";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/legal" element={<Legal />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/pricing" element={<Pricing />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

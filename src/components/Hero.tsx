@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from './ui/button';
@@ -7,7 +6,19 @@ const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section 
+      id="home" 
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 sm:pt-24 lg:pt-28"
+      style={{
+        backgroundImage: 'url("https://iihtng.com/wp-content/uploads/2020/07/IIHT-Project-Management.png.webp")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      {/* Semi-transparent overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
+      
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-kazihub-dark via-kazihub-blue/20 to-kazihub-dark"></div>
       
@@ -41,7 +52,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="btn-secondary text-lg px-8 py-4"
+              className="btn-secondary text-lg px-8 py-4 hover:text-gray-900"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               {t('hero.quote')}

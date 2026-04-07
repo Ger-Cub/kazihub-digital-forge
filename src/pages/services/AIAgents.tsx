@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Bot, MessageCircle, Brain, Zap, Users, BarChart } from 'lucide-react';
 import { Button } from '../../components/ui/button';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { Link } from 'react-router-dom';
 
 const AIAgents = () => {
   const { t } = useLanguage();
@@ -66,8 +66,18 @@ const AIAgents = () => {
           <h2 className="text-3xl font-bold gradient-text mb-4">Testez notre démo IA</h2>
           <p className="text-xl text-gray-300 mb-8">Découvrez la puissance de nos agents intelligents</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="btn-primary">Démo Gratuite</Button>
-            <Button className="btn-secondary">Voir les Prix</Button>
+            <Link 
+              to="/#contact" 
+              className="btn-primary text-lg px-8 py-3 inline-block"
+            >
+              Démo Gratuite
+            </Link>
+            <Link 
+              to="/pricing" 
+              className="btn-secondary text-lg px-8 py-3 inline-block"
+            >
+              Voir les Prix
+            </Link>
           </div>
         </div>
       </div>

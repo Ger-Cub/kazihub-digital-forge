@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Target, TrendingUp, Users, Lightbulb, BarChart, Compass } from 'lucide-react';
 import { Button } from '../../components/ui/button';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { Link } from 'react-router-dom';
 
 const StrategicConsulting = () => {
   const { t } = useLanguage();
@@ -85,9 +85,12 @@ const StrategicConsulting = () => {
         <div className="text-center glass-effect p-8 rounded-2xl">
           <h2 className="text-3xl font-bold gradient-text mb-4">Prêt à transformer votre entreprise ?</h2>
           <p className="text-xl text-gray-300 mb-8">Planifiez un audit gratuit avec nos experts</p>
-          <Button className="btn-primary text-lg px-8 py-3">
+          <Link 
+            to="/#contact" 
+            className="btn-primary text-lg px-8 py-3 inline-block"
+          >
             Réserver un Audit Gratuit
-          </Button>
+          </Link>
         </div>
       </div>
       <Footer />
