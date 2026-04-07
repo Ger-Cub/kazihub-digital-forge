@@ -1,49 +1,81 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import { cn } from '../lib/utils';
 
 const ProjectsCarousel = () => {
   const { t } = useLanguage();
   const carouselRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const projects = [
     {
       name: 'GeoCongo AI',
+      description: 'Plateforme d\'intelligence géospatiale pour la gestion des ressources naturelles en RDC.',
       image: '/projects/geocongo-map.png',
       category: 'Intelligence Artificielle',
       link: 'https://geocongoai.com'
     },
     {
-      name: 'E-commerce Platform',
+      name: 'KaziMarket',
+      description: 'Solution e-commerce multivendeur optimisée pour les paiements mobiles locaux.',
       image: '/lovable-uploads/ecommerce.jpg',
-      category: 'Développement Web'
+      category: 'Développement Web',
+      link: '#'
     },
     {
-      name: 'AI Chatbot',
+      name: 'Lola Bot',
+      description: 'Assistant virtuel intelligent spécialisé dans le service client automatisé en lingala et français.',
       image: '/lovable-uploads/ai-chatbot.png',
-      category: 'Automation'
+      category: 'Automation',
+      link: '#'
     },
     {
-      name: 'Mobile App',
+      name: 'SafeRide App',
+      description: 'Application mobile de transport sécurisé avec suivi en temps réel et alertes d\'urgence.',
       image: '/lovable-uploads/mobile-app.png',
-      category: 'Développement Mobile'
+      category: 'Développement Mobile',
+      link: '#'
     },
     {
-      name: 'CRM System',
+      name: 'Forge ERP',
+      description: 'Système de gestion intégrée sur mesure pour les PME du secteur industriel.',
       image: '/lovable-uploads/crm-system.webp',
-      category: 'Software Architecture'
+      category: 'Software Architecture',
+      link: '#'
     }
   ];
 
-  const scrollLeft = () => {
+  const checkScroll = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+      setCanScrollLeft(scrollLeft > 10);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+      
+      // Update active index based on scroll position
+      const index = Math.round(scrollLeft / (420 + 24)); // card width + gap
+      setActiveIndex(index);
     }
   };
 
-  const scrollRight = () => {
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (carousel) {
+      carousel.addEventListener('scroll', checkScroll);
+      checkScroll();
+      return () => carousel.removeEventListener('scroll', checkScroll);
+    }
+  }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+      const scrollAmount = carouselRef.current.clientWidth > 768 ? 444 : 324; // Width + gap
+      carouselRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -51,6 +83,7 @@ const ProjectsCarousel = () => {
     <section id="portfolio" className="py-32 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cosmic-pink/5 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cosmic-indigo/5 rounded-full blur-[120px] -translate-x-1/2 translate-y-1/2"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
@@ -64,15 +97,23 @@ const ProjectsCarousel = () => {
 
           <div className="flex space-x-4">
             <button
-              onClick={scrollLeft}
-              className="w-14 h-14 glass-premium text-white flex items-center justify-center rounded-2xl hover:bg-cosmic-indigo transition-all duration-300 shadow-xl group border border-white/5 active:scale-95"
+              onClick={() => scroll('left')}
+              disabled={!canScrollLeft}
+              className={cn(
+                "w-14 h-14 glass-premium text-white flex items-center justify-center rounded-2xl transition-all duration-300 shadow-xl group border border-white/5 active:scale-95",
+                !canScrollLeft ? "opacity-30 cursor-not-allowed" : "hover:bg-cosmic-indigo"
+              )}
               aria-label="Previous project"
             >
               <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
             </button>
             <button
-              onClick={scrollRight}
-              className="w-14 h-14 glass-premium text-white flex items-center justify-center rounded-2xl hover:bg-cosmic-indigo transition-all duration-300 shadow-xl group border border-white/5 active:scale-95"
+              onClick={() => scroll('right')}
+              disabled={!canScrollRight}
+              className={cn(
+                "w-14 h-14 glass-premium text-white flex items-center justify-center rounded-2xl transition-all duration-300 shadow-xl group border border-white/5 active:scale-95",
+                !canScrollRight ? "opacity-30 cursor-not-allowed" : "hover:bg-cosmic-indigo"
+              )}
               aria-label="Next project"
             >
               <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -83,48 +124,77 @@ const ProjectsCarousel = () => {
         <div className="relative">
           <div
             ref={carouselRef}
-            className="flex items-stretch space-x-6 overflow-x-auto scrollbar-hide py-4 px-4 -mx-4 snap-x snap-mandatory"
+            className="flex items-stretch space-x-6 overflow-x-auto py-4 px-4 -mx-4 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           >
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="min-w-[300px] md:min-w-[420px] flex-shrink-0 snap-start"
+                className="min-w-[300px] md:min-w-[420px] flex-shrink-0 snap-start h-full"
               >
-                <div className="glass-card p-4 rounded-3xl group hover:border-white/20 transition-all duration-500 hover:-translate-y-1 shadow-xl relative h-full flex flex-col">
-                  <div className="relative overflow-hidden rounded-2xl aspect-video mb-4 bg-cosmic-black shadow-inner flex-shrink-0">
+                <div className="glass-card p-4 rounded-3xl group hover:border-white/20 transition-all duration-500 hover:-translate-y-2 shadow-xl relative h-[460px] flex flex-col">
+                  <div className="relative overflow-hidden rounded-2xl w-full h-64 mb-5 bg-cosmic-black shadow-inner flex-shrink-0">
                     <img
                       src={project.image}
-                      alt={project.name}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 grayscale-[10%] group-hover:grayscale-0"
+                      alt={`${project.name} - ${project.category}`}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-1000 grayscale-[40%] group-hover:grayscale-0"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-cosmic-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-cosmic-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
 
                     {project.link && (
                       <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="absolute top-4 right-4 w-10 h-10 glass-premium rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 hover:bg-cosmic-indigo scale-75 group-hover:scale-100 shadow-2xl"
+                        className="absolute top-4 right-4 w-12 h-12 glass-premium rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 hover:bg-cosmic-indigo scale-75 group-hover:scale-100 shadow-2xl z-10"
                       >
-                        <ExternalLink className="w-4 h-4 text-white" />
+                        <ExternalLink className="w-5 h-5 text-white" />
                       </a>
                     )}
 
                     <div className="absolute bottom-4 left-4">
-                      <span className="px-3 py-1 rounded-full bg-cosmic-indigo/80 backdrop-blur-md text-[9px] font-bold text-white uppercase tracking-widest border border-white/10">
+                      <span className="px-3 py-1 rounded-full bg-cosmic-indigo/90 backdrop-blur-md text-[10px] font-bold text-white uppercase tracking-widest border border-white/10 shadow-lg">
                         {project.category}
                       </span>
                     </div>
                   </div>
 
-                  <div className="px-1 flex-grow">
-                    <h3 className="text-xl font-bold font-outfit text-white mb-2 group-hover:text-cosmic-indigo transition-colors duration-300">
-                      {project.name}
-                    </h3>
-                    <div className="w-8 h-0.5 bg-white/10 group-hover:w-16 group-hover:bg-cosmic-indigo transition-all duration-500"></div>
+                  <div className="px-2 flex-grow flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-2xl font-bold font-outfit text-white mb-2 group-hover:text-cosmic-indigo transition-colors duration-300">
+                        {project.name}
+                      </h3>
+                      <p className="text-cosmic-slate text-sm leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-500 overflow-hidden">
+                        {project.description}
+                      </p>
+                    </div>
+                    <div className="mt-4">
+                      <div className="w-8 h-1 bg-gradient-to-r from-cosmic-indigo to-cosmic-violet rounded-full group-hover:w-full transition-all duration-700"></div>
+                    </div>
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* Progress Indicators */}
+          <div className="flex justify-center mt-12 space-x-2">
+            {projects.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  const scrollAmount = carouselRef.current?.clientWidth > 768 ? 444 : 324;
+                  carouselRef.current?.scrollTo({
+                    left: index * scrollAmount,
+                    behavior: 'smooth'
+                  });
+                }}
+                className={cn(
+                  "h-1.5 transition-all duration-500 rounded-full",
+                  activeIndex === index ? "w-12 bg-cosmic-indigo" : "w-2 bg-white/20 hover:bg-white/40"
+                )}
+                aria-label={`Go to project ${index + 1}`}
+              />
             ))}
           </div>
         </div>
