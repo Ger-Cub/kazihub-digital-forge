@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { ThemeProvider } from "next-themes";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import WebDevelopment from "./pages/services/WebDevelopment";
@@ -22,29 +23,31 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <LanguageProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/services/web-development" element={<WebDevelopment />} />
-            <Route path="/services/ai-agents" element={<AIAgents />} />
-            <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
-            <Route path="/services/support-automation" element={<SupportAutomation />} />
-            <Route path="/services/strategic-consulting" element={<StrategicConsulting />} />
-            <Route path="/services/ux-ui-design" element={<UXUIDesign />} />
-            <Route path="/legal" element={<Legal />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/pricing" element={<Pricing />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </LanguageProvider>
-    </TooltipProvider>
+    <ThemeProvider defaultTheme="dark" attribute="class">
+      <TooltipProvider>
+        <LanguageProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/services/web-development" element={<WebDevelopment />} />
+              <Route path="/services/ai-agents" element={<AIAgents />} />
+              <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
+              <Route path="/services/support-automation" element={<SupportAutomation />} />
+              <Route path="/services/strategic-consulting" element={<StrategicConsulting />} />
+              <Route path="/services/ux-ui-design" element={<UXUIDesign />} />
+              <Route path="/legal" element={<Legal />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/pricing" element={<Pricing />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </LanguageProvider>
+      </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 

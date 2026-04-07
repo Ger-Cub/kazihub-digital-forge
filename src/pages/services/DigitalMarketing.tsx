@@ -19,7 +19,7 @@ const DigitalMarketing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-kazihub-dark text-white">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Hero Section */}
@@ -27,7 +27,7 @@ const DigitalMarketing = () => {
           <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
             Marketing Digital & Réseaux Sociaux
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Boostez votre visibilité et convertissez vos prospects en clients fidèles
           </p>
         </div>
@@ -38,7 +38,7 @@ const DigitalMarketing = () => {
             <div key={index} className="glass-effect p-6 rounded-2xl hover:scale-105 transition-transform">
               <service.icon className="w-12 h-12 text-kazihub-gold mb-4" />
               <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-gray-300">{service.desc}</p>
+              <p className="text-muted-foreground">{service.desc}</p>
             </div>
           ))}
         </div>
@@ -52,7 +52,7 @@ const DigitalMarketing = () => {
           ].map((item, index) => (
             <div key={index} className="text-center glass-effect p-6 rounded-2xl">
               <div className="text-4xl font-bold gradient-text mb-2">{item.stat}</div>
-              <p className="text-gray-300">{item.label}</p>
+              <p className="text-muted-foreground">{item.label}</p>
             </div>
           ))}
         </div>
@@ -80,10 +80,10 @@ const DigitalMarketing = () => {
             ].map((pkg, index) => (
               <div key={index} className={`glass-effect p-6 rounded-2xl ${index === 1 ? 'border-2 border-kazihub-gold' : ''}`}>
                 <h3 className="text-2xl font-bold text-kazihub-gold mb-2">{pkg.name}</h3>
-                <div className="text-3xl font-bold mb-4">{pkg.price}<span className="text-lg text-gray-300">/mois</span></div>
+                <div className="text-3xl font-bold mb-4">{pkg.price}<span className="text-lg text-muted-foreground">/mois</span></div>
                 <ul className="space-y-2 mb-6">
                   {pkg.features.map((feature, idx) => (
-                    <li key={idx} className="text-gray-300">✓ {feature}</li>
+                    <li key={idx} className="text-muted-foreground">✓ {feature}</li>
                   ))}
                 </ul>
                 <Button className="btn-primary w-full">Choisir</Button>

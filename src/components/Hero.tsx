@@ -6,8 +6,8 @@ const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 sm:pt-24 lg:pt-28"
       style={{
         backgroundImage: 'url("https://iihtng.com/wp-content/uploads/2020/07/IIHT-Project-Management.png.webp")',
@@ -18,10 +18,10 @@ const Hero = () => {
     >
       {/* Semi-transparent overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
-      
+
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-kazihub-dark via-kazihub-blue/20 to-kazihub-dark"></div>
-      
+
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-kazihub-gold/10 rounded-full blur-3xl animate-pulse"></div>
@@ -42,16 +42,16 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-in-right">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="btn-primary text-lg px-8 py-4"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               {t('hero.cta')}
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
+            <Button
+              variant="outline"
+              size="lg"
               className="btn-secondary text-lg px-8 py-4 hover:text-gray-900"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
@@ -63,15 +63,15 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="glass-effect p-6 rounded-lg">
               <div className="text-3xl font-bold gradient-text mb-2">10+</div>
-              <div className="text-gray-400">Années d'expérience</div>
+              <div className="text-muted-foreground">{t('hero.stats.experience')}</div>
             </div>
             <div className="glass-effect p-6 rounded-lg">
               <div className="text-3xl font-bold gradient-text mb-2">50+</div>
-              <div className="text-gray-400">Projets réalisés</div>
+              <div className="text-muted-foreground">{t('hero.stats.projects')}</div>
             </div>
             <div className="glass-effect p-6 rounded-lg">
               <div className="text-3xl font-bold gradient-text mb-2">24h</div>
-              <div className="text-gray-400">Temps de réponse</div>
+              <div className="text-muted-foreground">{t('hero.stats.response')}</div>
             </div>
           </div>
         </div>

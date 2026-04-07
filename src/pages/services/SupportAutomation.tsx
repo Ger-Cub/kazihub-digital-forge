@@ -24,7 +24,7 @@ const SupportAutomation = () => {
   };
 
   return (
-    <div className="min-h-screen bg-kazihub-dark text-white">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Hero Section */}
@@ -32,7 +32,7 @@ const SupportAutomation = () => {
           <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
             Support & Automatisation
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Optimisez votre service client avec des solutions automatisées intelligentes et multilingues
           </p>
         </div>
@@ -43,7 +43,7 @@ const SupportAutomation = () => {
             <div key={index} className="glass-effect p-6 rounded-2xl hover:scale-105 transition-transform">
               <service.icon className="w-12 h-12 text-kazihub-emerald mb-4" />
               <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-gray-300">{service.desc}</p>
+              <p className="text-muted-foreground">{service.desc}</p>
             </div>
           ))}
         </div>
@@ -60,7 +60,7 @@ const SupportAutomation = () => {
             ].map((benefit, index) => (
               <div key={index} className="glass-effect p-6 rounded-2xl">
                 <h3 className="text-xl font-bold text-kazihub-gold mb-3">{benefit.title}</h3>
-                <p className="text-gray-300">{benefit.desc}</p>
+                <p className="text-muted-foreground">{benefit.desc}</p>
               </div>
             ))}
           </div>
@@ -69,7 +69,7 @@ const SupportAutomation = () => {
         {/* CTA Section */}
         <div className="text-center glass-effect p-8 rounded-2xl bg-gradient-to-r from-kazihub-blue/20 to-kazihub-emerald/20">
           <h2 className="text-3xl font-bold gradient-text mb-4">Automatisez votre support dès aujourd'hui</h2>
-          <p className="text-xl text-gray-300 mb-8">Découvrez comment nos solutions peuvent transformer votre service client</p>
+          <p className="text-xl text-muted-foreground mb-8">Découvrez comment nos solutions peuvent transformer votre service client</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/#contact" 

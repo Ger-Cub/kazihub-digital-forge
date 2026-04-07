@@ -31,19 +31,19 @@ const About = () => {
             <div className="grid grid-cols-2 gap-4 mt-8">
               <div className="glass-effect p-4 rounded-lg text-center">
                 <div className="text-2xl mb-2">🎯</div>
-                <div className="text-kazihub-gold font-semibold">Excellence</div>
+                <div className="text-kazihub-gold font-semibold">{t('about.value.excellence')}</div>
               </div>
               <div className="glass-effect p-4 rounded-lg text-center">
                 <div className="text-2xl mb-2">🤝</div>
-                <div className="text-kazihub-gold font-semibold">Collaboration</div>
+                <div className="text-kazihub-gold font-semibold">{t('about.value.collaboration')}</div>
               </div>
               <div className="glass-effect p-4 rounded-lg text-center">
                 <div className="text-2xl mb-2">💡</div>
-                <div className="text-kazihub-gold font-semibold">Innovation</div>
+                <div className="text-kazihub-gold font-semibold">{t('about.value.innovation')}</div>
               </div>
               <div className="glass-effect p-4 rounded-lg text-center">
                 <div className="text-2xl mb-2">🌍</div>
-                <div className="text-kazihub-gold font-semibold">Impact Social</div>
+                <div className="text-kazihub-gold font-semibold">{t('about.value.impact')}</div>
               </div>
             </div>
           </div>
@@ -52,8 +52,8 @@ const About = () => {
           <div className="glass-effect p-8 rounded-2xl">
             <div className="text-center">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-r from-kazihub-gold to-kazihub-emerald p-1">
-                <img 
-                  src="/lovable-uploads/6d37ff0d-fcea-4a98-a253-7ecb3ac2ad30.png" 
+                <img
+                  src="/lovable-uploads/6d37ff0d-fcea-4a98-a253-7ecb3ac2ad30.png"
                   alt="Gerard Cubaka - CEO & Fondateur de KaziHub"
                   className="w-full h-full object-cover rounded-full"
                 />
@@ -67,7 +67,7 @@ const About = () => {
               <p className="text-gray-300 leading-relaxed">
                 {t('about.founder.bio')}
               </p>
-              
+
               {/* Social links */}
               <div className="flex justify-center space-x-4 mt-6">
                 <a href="#" className="w-10 h-10 bg-kazihub-blue rounded-full flex items-center justify-center hover:bg-kazihub-gold transition-colors">

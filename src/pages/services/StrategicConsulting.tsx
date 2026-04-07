@@ -19,7 +19,7 @@ const StrategicConsulting = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-kazihub-dark text-white">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Hero Section */}
@@ -27,7 +27,7 @@ const StrategicConsulting = () => {
           <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
             Conseil Stratégique
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Accompagnement personnalisé pour accélérer votre transformation digitale et maximiser votre impact
           </p>
         </div>
@@ -38,7 +38,7 @@ const StrategicConsulting = () => {
             <div key={index} className="glass-effect p-6 rounded-2xl hover:scale-105 transition-transform">
               <service.icon className="w-12 h-12 text-kazihub-gold mb-4" />
               <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-gray-300">{service.desc}</p>
+              <p className="text-muted-foreground">{service.desc}</p>
             </div>
           ))}
         </div>
@@ -58,7 +58,7 @@ const StrategicConsulting = () => {
                   <span className="text-kazihub-dark font-bold text-xl">{step.step}</span>
                 </div>
                 <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                <p className="text-gray-300">{step.desc}</p>
+                <p className="text-muted-foreground">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -75,7 +75,7 @@ const StrategicConsulting = () => {
             ].map((sector, index) => (
               <div key={index} className="glass-effect p-6 rounded-2xl text-center">
                 <h3 className="text-xl font-bold text-kazihub-emerald mb-3">{sector.title}</h3>
-                <p className="text-gray-300">{sector.desc}</p>
+                <p className="text-muted-foreground">{sector.desc}</p>
               </div>
             ))}
           </div>
@@ -84,7 +84,7 @@ const StrategicConsulting = () => {
         {/* CTA Section */}
         <div className="text-center glass-effect p-8 rounded-2xl">
           <h2 className="text-3xl font-bold gradient-text mb-4">Prêt à transformer votre entreprise ?</h2>
-          <p className="text-xl text-gray-300 mb-8">Planifiez un audit gratuit avec nos experts</p>
+          <p className="text-xl text-muted-foreground mb-8">Planifiez un audit gratuit avec nos experts</p>
           <Link 
             to="/#contact" 
             className="btn-primary text-lg px-8 py-3 inline-block"

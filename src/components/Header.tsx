@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from './ui/button';
+import { ThemeToggle } from './ThemeToggle';
 
 const Header = () => {
   const { language, toggleLanguage, t } = useLanguage();
@@ -48,13 +49,14 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Language Toggle & Mobile Menu */}
+          {/* Language Toggle & Theme Toggle & Mobile Menu */}
           <div className="flex items-center space-x-4">
+            <ThemeToggle />
             <Button
               onClick={toggleLanguage}
               variant="outline"
               size="sm"
-              className="border-kazihub-gold text-kazihub-gold hover:bg-kazihub-gold hover:text-kazihub-dark"
+              className="border-kazihub-gold text-kazihub-gold hover:bg-kazihub-gold hover:text-kazihub-dark rounded-full px-3"
             >
               {language.toUpperCase()}
             </Button>

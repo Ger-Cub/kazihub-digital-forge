@@ -40,16 +40,16 @@ const Contact = () => {
       if (response.ok) {
         toast({
           title: t('contact.success'),
-          description: "Nous vous recontacterons sous 24h !",
+          description: t('contact.success.desc'),
         });
         setFormData({ name: '', email: '', company: '', message: '' });
       } else {
-        throw new Error('Erreur lors de l\'envoi');
+        throw new Error(t('contact.error'));
       }
     } catch (error) {
       toast({
-        title: "Erreur",
-        description: "Une erreur est survenue. Veuillez réessayer.",
+        title: t('contact.error'),
+        description: t('contact.error.desc'),
         variant: "destructive"
       });
     } finally {
@@ -58,20 +58,20 @@ const Contact = () => {
   };
 
   const handleWhatsApp = () => {
-    const message = `Bonjour KaziHub ! Je souhaite discuter d'un projet digital.`;
+    const message = t('contact.whatsapp.default');
     const whatsappUrl = `https://wa.me/+243991102448?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-kazihub-dark via-kazihub-blue/10 to-kazihub-dark">
+    <section id="contact" className="py-20 bg-background transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* CTA Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
             {t('cta.title')}
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-muted-foreground mb-8">
             {t('cta.subtitle')}
           </p>
         </div>
@@ -79,7 +79,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="glass-effect p-8 rounded-2xl">
-            <h3 className="text-2xl font-bold text-white mb-6">{t('contact.title')}</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-6">{t('contact.title')}</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <input type="hidden" name="access_key" value="2e250eed-85d5-4a23-9a4c-e97c662adc24" />
               <div>
@@ -89,7 +89,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="bg-kazihub-gray border-gray-600 text-white placeholder-gray-400"
+                  className="bg-accent/50 border-border text-foreground placeholder-muted-foreground"
                 />
               </div>
               <div>
@@ -100,7 +100,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="bg-kazihub-gray border-gray-600 text-white placeholder-gray-400"
+                  className="bg-accent/50 border-border text-foreground placeholder-muted-foreground"
                 />
               </div>
               <div>
@@ -109,7 +109,7 @@ const Contact = () => {
                   placeholder={t('contact.company')}
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  className="bg-kazihub-gray border-gray-600 text-white placeholder-gray-400"
+                  className="bg-accent/50 border-border text-foreground placeholder-muted-foreground"
                 />
               </div>
               <div>
@@ -120,15 +120,15 @@ const Contact = () => {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
                   rows={4}
-                  className="bg-kazihub-gray border-gray-600 text-white placeholder-gray-400"
+                  className="bg-accent/50 border-border text-foreground placeholder-muted-foreground"
                 />
               </div>
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 className="btn-primary w-full text-lg py-3"
                 disabled={isLoading}
               >
-                {isLoading ? 'Envoi...' : t('contact.send')}
+                {isLoading ? t('contact.sending') : t('contact.send')}
               </Button>
             </form>
           </div>
@@ -140,9 +140,9 @@ const Contact = () => {
               <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">📱</span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Contact Direct</h3>
-              <p className="text-gray-300 mb-6">Parlons de votre projet sur WhatsApp</p>
-              <Button 
+              <h3 className="text-xl font-bold text-foreground mb-2">{t('contact.direct.title')}</h3>
+              <p className="text-muted-foreground mb-6">{t('contact.direct.subtitle')}</p>
+              <Button
                 onClick={handleWhatsApp}
                 className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300"
               >
@@ -152,23 +152,23 @@ const Contact = () => {
 
             {/* Contact Details */}
             <div className="glass-effect p-8 rounded-2xl">
-              <h3 className="text-xl font-bold text-white mb-6">Informations de Contact</h3>
+              <h3 className="text-xl font-bold text-foreground mb-6">{t('contact.info.title')}</h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <span className="text-kazihub-gold">📧</span>
-                  <span className="text-gray-300">contact@kazihub.digital</span>
+                  <span className="text-muted-foreground">contact@kazihub.digital</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <span className="text-kazihub-gold">📱</span>
-                  <span className="text-gray-300">+243 991 102 448</span>
+                  <span className="text-muted-foreground">+243 991 102 448</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <span className="text-kazihub-gold">🌍</span>
-                  <span className="text-gray-300">Kinshasa, RD Congo</span>
+                  <span className="text-muted-foreground">Kinshasa, RD Congo</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <span className="text-kazihub-gold">⏰</span>
-                  <span className="text-gray-300">Réponse sous 24h</span>
+                  <span className="text-muted-foreground">{t('footer.response')}</span>
                 </div>
               </div>
             </div>
@@ -177,19 +177,19 @@ const Contact = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="glass-effect p-4 rounded-lg text-center">
                 <div className="text-2xl mb-2">🎯</div>
-                <div className="text-sm text-gray-300">Devis Gratuit</div>
+                <div className="text-sm text-muted-foreground">{t('contact.feature.quote')}</div>
               </div>
               <div className="glass-effect p-4 rounded-lg text-center">
                 <div className="text-2xl mb-2">🚀</div>
-                <div className="text-sm text-gray-300">Démarrage Rapide</div>
+                <div className="text-sm text-muted-foreground">{t('contact.feature.start')}</div>
               </div>
               <div className="glass-effect p-4 rounded-lg text-center">
                 <div className="text-2xl mb-2">💡</div>
-                <div className="text-sm text-gray-300">Solutions Sur-Mesure</div>
+                <div className="text-sm text-muted-foreground">{t('contact.feature.custom')}</div>
               </div>
               <div className="glass-effect p-4 rounded-lg text-center">
                 <div className="text-2xl mb-2">🤝</div>
-                <div className="text-sm text-gray-300">Support 24/7</div>
+                <div className="text-sm text-muted-foreground">{t('contact.feature.support')}</div>
               </div>
             </div>
           </div>

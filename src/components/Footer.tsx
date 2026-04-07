@@ -11,7 +11,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-kazihub-dark border-t border-gray-800">
+    <footer className="bg-background border-t border-border transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Description */}
@@ -22,10 +22,10 @@ const Footer = () => {
               </div>
               <div>
                 <h1 className="text-xl font-bold gradient-text">KaziHub</h1>
-                <p className="text-xs text-gray-400">Digital Agency</p>
+                <p className="text-xs text-muted-foreground">Digital Agency</p>
               </div>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md">
+            <p className="text-muted-foreground mb-6 max-w-md">
               {t('footer.description')}
             </p>
             <div className="flex space-x-4">
@@ -46,60 +46,60 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-4">{t('footer.services')}</h3>
             <ul className="space-y-2">
               <li>
-                <Link 
-                  to="/services/web-development" 
-                  className="text-gray-400 hover:text-kazihub-gold transition-colors"
+                <Link
+                  to="/services/web-development"
+                  className="text-muted-foreground hover:text-kazihub-gold transition-colors"
                   onClick={scrollToTop}
                 >
-                  Développement Web & Mobile
+                  {t('services.web.title')}
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/services/ai-agents" 
-                  className="text-gray-400 hover:text-kazihub-gold transition-colors"
+                <Link
+                  to="/services/ai-agents"
+                  className="text-muted-foreground hover:text-kazihub-gold transition-colors"
                   onClick={scrollToTop}
                 >
-                  Agents IA Personnalisés
+                  {t('services.ai.title')}
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/services/digital-marketing" 
-                  className="text-gray-400 hover:text-kazihub-gold transition-colors"
+                <Link
+                  to="/services/digital-marketing"
+                  className="text-muted-foreground hover:text-kazihub-gold transition-colors"
                   onClick={scrollToTop}
                 >
-                  Marketing Digital & IA
+                  {t('services.marketing.title')}
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/services/support-automation" 
-                  className="text-gray-400 hover:text-kazihub-gold transition-colors"
+                <Link
+                  to="/services/support-automation"
+                  className="text-muted-foreground hover:text-kazihub-gold transition-colors"
                   onClick={scrollToTop}
                 >
-                  Support & Automatisation
+                  {t('services.support.title')}
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/services/strategic-consulting" 
-                  className="text-gray-400 hover:text-kazihub-gold transition-colors"
+                <Link
+                  to="/services/strategic-consulting"
+                  className="text-muted-foreground hover:text-kazihub-gold transition-colors"
                   onClick={scrollToTop}
                 >
-                  Conseil Stratégique
+                  {t('services.consulting.title')}
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/services/ux-ui-design" 
-                  className="text-gray-400 hover:text-kazihub-gold transition-colors"
+                <Link
+                  to="/services/ux-ui-design"
+                  className="text-muted-foreground hover:text-kazihub-gold transition-colors"
                   onClick={scrollToTop}
                 >
-                  UX/UI Design
+                  {t('services.design.title')}
                 </Link>
               </li>
             </ul>
@@ -107,24 +107,24 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-4">{t('footer.contact')}</h3>
             <ul className="space-y-2">
-              <li className="text-gray-400">📧 contact@kazihub.digital</li>
-              <li className="text-gray-400">📱 +243 991 102 448</li>
-              <li className="text-gray-400">🌍 Kinshasa, RD Congo</li>
-              <li className="text-gray-400">⏰ Réponse sous 24h</li>
+              <li className="text-muted-foreground">📧 contact@kazihub.digital</li>
+              <li className="text-muted-foreground">📱 +243 991 102 448</li>
+              <li className="text-muted-foreground">🌍 Kinshasa, RD Congo</li>
+              <li className="text-muted-foreground">⏰ {t('footer.response')}</li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-muted-foreground text-sm">
             © 2024 KaziHub Digital Agency. {t('footer.rights')}
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/legal" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors" onClick={scrollToTop}>Mentions légales</Link>
-            <Link to="/privacy" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors" onClick={scrollToTop}>Confidentialité</Link>
-            <Link to="/terms" className="text-gray-400 hover:text-kazihub-gold text-sm transition-colors" onClick={scrollToTop}>CGV</Link>
+            <Link to="/legal" className="text-muted-foreground hover:text-kazihub-gold text-sm transition-colors" onClick={scrollToTop}>{t('footer.legal')}</Link>
+            <Link to="/privacy" className="text-muted-foreground hover:text-kazihub-gold text-sm transition-colors" onClick={scrollToTop}>{t('footer.privacy')}</Link>
+            <Link to="/terms" className="text-muted-foreground hover:text-kazihub-gold text-sm transition-colors" onClick={scrollToTop}>{t('footer.terms')}</Link>
           </div>
         </div>
       </div>
