@@ -4,6 +4,47 @@
 
 @layer base {
   :root {
+    /* Light Mode */
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    --primary: 239 84% 67%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 271 91% 65%;
+    --secondary-foreground: 224 71.4% 4.1%;
+
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 224 71.4% 4.1%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 239 84% 67%;
+
+    --radius: 0.75rem;
+
+    /* Cosmic Palette Variables */
+    --cosmic-indigo: 239 84% 67%;
+    --cosmic-violet: 271 91% 65%;
+    --cosmic-pink: 327 73% 60%;
+    --cosmic-black: 220 33% 2%;
+    --cosmic-slate: 215 20% 65%;
+  }
+
+  .dark {
+    /* Dark Mode */
     --background: 220 33% 2%;
     --foreground: 210 40% 98%;
 
@@ -25,14 +66,12 @@
     --accent: 217 33% 17%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217 33% 17%;
     --input: 217 33% 17%;
     --ring: 239 84% 67%;
-
-    --radius: 0.75rem;
   }
 }
 
@@ -42,20 +81,15 @@
   }
 
   body {
-    @apply bg-cosmic-black text-foreground font-sans selection:bg-cosmic-indigo/30;
-    background-image:
-      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.1) 0px, transparent 50%);
+    @apply bg-background text-foreground font-sans selection:bg-cosmic-indigo/30 transition-colors duration-300;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(var(--cosmic-indigo), 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(var(--cosmic-violet), 0.1) 0px, transparent 50%);
     background-attachment: fixed;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-outfit tracking-tight;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-outfit tracking-tight text-foreground;
   }
 
   html {
@@ -69,11 +103,11 @@
   }
 
   .glass-premium {
-    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] shadow-glass;
+    @apply bg-white/70 dark:bg-white/[0.03] backdrop-blur-xl border border-black/[0.05] dark:border-white/[0.08] shadow-glass dark:shadow-glass;
   }
 
   .glass-card {
-    @apply glass-premium hover:border-white/[0.15] transition-all duration-500 hover:shadow-glass-indigo;
+    @apply glass-premium hover:border-black/[0.1] dark:hover:border-white/[0.15] transition-all duration-500 hover:shadow-xl dark:hover:shadow-glass-indigo;
   }
 
   .btn-primary {
@@ -86,7 +120,7 @@
   }
 
   .btn-secondary {
-    @apply glass-premium text-white hover:bg-white/5 px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2;
+    @apply glass-premium text-foreground hover:bg-black/[0.02] dark:hover:bg-white/5 px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2;
   }
 
   .section-container {

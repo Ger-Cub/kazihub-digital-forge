@@ -67,18 +67,18 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Cosmic Tech Palette
-				'cosmic-black': '#05070a',
-				'cosmic-indigo': '#6366f1',
-				'cosmic-violet': '#a855f7',
-				'cosmic-pink': '#ec4899',
-				'cosmic-slate': '#94a3b8',
+				// Cosmic Tech Palette (Dynamic)
+				'cosmic-black': 'hsl(var(--cosmic-black))',
+				'cosmic-indigo': 'hsl(var(--cosmic-indigo))',
+				'cosmic-violet': 'hsl(var(--cosmic-violet))',
+				'cosmic-pink': 'hsl(var(--cosmic-pink))',
+				'cosmic-slate': 'hsl(var(--cosmic-slate))',
 				// Legacy compatible colors
-				'kazihub-dark': '#05070a',
-				'kazihub-blue': '#6366f1',
-				'kazihub-gold': '#a855f7',
-				'kazihub-emerald': '#ec4899',
-				'kazihub-gray': '#1f2937'
+				'kazihub-dark': 'hsl(var(--cosmic-black))',
+				'kazihub-blue': 'hsl(var(--cosmic-indigo))',
+				'kazihub-gold': 'hsl(var(--cosmic-violet))',
+				'kazihub-emerald': 'hsl(var(--cosmic-pink))',
+				'kazihub-gray': 'hsl(var(--muted-foreground))'
 			},
 			boxShadow: {
 				'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
