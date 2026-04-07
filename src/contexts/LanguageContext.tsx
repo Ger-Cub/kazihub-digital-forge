@@ -133,7 +133,31 @@ const translations = {
     'footer.legal': 'Mentions légales',
     'footer.privacy': 'Confidentialité',
     'footer.terms': 'CGV',
-    'footer.response': 'Réponse sous 24h'
+    'footer.response': 'Réponse sous 24h',
+
+    // SEO
+    'seo.home.title': 'KaziHub Digital Agency - Agence Digitale Panafricaine',
+    'seo.home.description': 'Solutions digitales intelligentes pour l\'Afrique. Développement web, IA, marketing digital et transformation numérique.',
+    'seo.pricing.title': 'Tarifs - Des solutions accessibles pour votre croissance',
+    'seo.pricing.description': 'Découvrez nos offres transparentes pour booster votre présence digitale et vos processus métier.',
+    'seo.web.title': 'Développement Web & Mobile - Solutions sur mesure',
+    'seo.web.description': 'Création de sites vitrines, e-commerce et applications mobiles performantes et sécurisées.',
+    'seo.ai.title': 'Agents IA Personnalisés - Automatisez votre futur',
+    'seo.ai.description': 'Intégrez des agents IA intelligents pour automatiser votre support client et vos workflows.',
+    'seo.marketing.title': 'Marketing Digital & IA - Boostez votre visibilité',
+    'seo.marketing.description': 'Stratégies marketing optimisées par l\'IA pour une croissance durable en Afrique.',
+    'seo.support.title': 'Support & Automatisation - Assistance 24/7',
+    'seo.support.description': 'Solutions de support automatisé et CRM intelligent pour une expérience client optimale.',
+    'seo.consulting.title': 'Conseil Stratégique - Transformation Numérique',
+    'seo.consulting.description': 'Accompagnement expert pour votre transition digitale et votre stratégie de croissance.',
+    'seo.design.title': 'UX/UI Design - Interfaces Élégantes',
+    'seo.design.description': 'Conception d\'interfaces utilisateur intuitives et centrées sur l\'utilisateur.',
+    'seo.legal.title': 'Mentions Légales - KaziHub',
+    'seo.legal.description': 'Informations légales concernant l\'agence KaziHub Digital Agency.',
+    'seo.privacy.title': 'Politique de Confidentialité - KaziHub',
+    'seo.privacy.description': 'Comment nous protégeons vos données chez KaziHub Digital Agency.',
+    'seo.terms.title': 'Conditions Générales de Vente - KaziHub',
+    'seo.terms.description': 'Les termes et conditions liés à nos prestations de services digitaux.'
   },
   en: {
     // Navigation
@@ -256,7 +280,31 @@ const translations = {
     'footer.legal': 'Legal Notice',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'T&Cs',
-    'footer.response': 'Response within 24h'
+    'footer.response': 'Response within 24h',
+
+    // SEO
+    'seo.home.title': 'KaziHub Digital Agency - Pan-African Digital Agency',
+    'seo.home.description': 'Smart digital solutions for Africa. Web development, AI, digital marketing, and digital transformation.',
+    'seo.pricing.title': 'Pricing - Accessible solutions for your growth',
+    'seo.pricing.description': 'Discover our transparent offers to boost your digital presence and business processes.',
+    'seo.web.title': 'Web & Mobile Development - Custom Solutions',
+    'seo.web.description': 'Creation of showcase sites, e-commerce, and high-performance, secure mobile applications.',
+    'seo.ai.title': 'Custom AI Agents - Automate your future',
+    'seo.ai.description': 'Integrate intelligent AI agents to automate your customer support and workflows.',
+    'seo.marketing.title': 'Digital Marketing & AI - Boost your visibility',
+    'seo.marketing.description': 'AI-optimized marketing strategies for sustainable growth in Africa.',
+    'seo.support.title': 'Support & Automation - 24/7 Assistance',
+    'seo.support.description': 'Automated support solutions and intelligent CRM for an optimal customer experience.',
+    'seo.consulting.title': 'Strategic Consulting - Digital Transformation',
+    'seo.consulting.description': 'Expert guidance for your digital transition and growth strategy.',
+    'seo.design.title': 'UX/UI Design - Elegant Interfaces',
+    'seo.design.description': 'Design of intuitive and user-centric user interfaces.',
+    'seo.legal.title': 'Legal Notices - KaziHub',
+    'seo.legal.description': 'Legal information regarding KaziHub Digital Agency.',
+    'seo.privacy.title': 'Privacy Policy - KaziHub',
+    'seo.privacy.description': 'How we protect your data at KaziHub Digital Agency.',
+    'seo.terms.title': 'Terms and Conditions of Sale - KaziHub',
+    'seo.terms.description': 'The terms and conditions related to our digital service provisions.'
   }
 };
 

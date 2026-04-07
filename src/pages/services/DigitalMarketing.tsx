@@ -5,6 +5,7 @@ import { TrendingUp, Target, Share2, Camera, PenTool, BarChart3 } from 'lucide-r
 import { Button } from '../../components/ui/button';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { SEO } from '../../components/SEO';
 
 const DigitalMarketing = () => {
   const { t } = useLanguage();
@@ -20,6 +21,7 @@ const DigitalMarketing = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+      <SEO titleKey="seo.marketing.title" descriptionKey="seo.marketing.description" />
       <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Hero Section */}
@@ -62,19 +64,19 @@ const DigitalMarketing = () => {
           <h2 className="text-3xl font-bold text-center gradient-text mb-12">Nos Formules</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { 
-                name: 'Starter', 
-                price: '150€', 
+              {
+                name: 'Starter',
+                price: '150€',
                 features: ['Audit SEO', 'Gestion 2 réseaux', 'Rapport mensuel', 'Support email']
               },
-              { 
-                name: 'Pro', 
-                price: '350€', 
+              {
+                name: 'Pro',
+                price: '350€',
                 features: ['Tout Starter +', 'Campagnes pub', 'Création contenu', 'Analytics avancés', 'Support prioritaire']
               },
-              { 
-                name: 'Enterprise', 
-                price: 'Sur mesure', 
+              {
+                name: 'Enterprise',
+                price: 'Sur mesure',
                 features: ['Tout Pro +', 'Stratégie personnalisée', 'Dédié account manager', 'Formation équipe']
               }
             ].map((pkg, index) => (

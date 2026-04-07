@@ -5,6 +5,7 @@ import { Button } from '../../components/ui/button';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
+import { SEO } from '../../components/SEO';
 
 const StrategicConsulting = () => {
   const { t } = useLanguage();
@@ -20,6 +21,7 @@ const StrategicConsulting = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+      <SEO titleKey="seo.consulting.title" descriptionKey="seo.consulting.description" />
       <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Hero Section */}
@@ -85,8 +87,8 @@ const StrategicConsulting = () => {
         <div className="text-center glass-effect p-8 rounded-2xl">
           <h2 className="text-3xl font-bold gradient-text mb-4">Prêt à transformer votre entreprise ?</h2>
           <p className="text-xl text-muted-foreground mb-8">Planifiez un audit gratuit avec nos experts</p>
-          <Link 
-            to="/#contact" 
+          <Link
+            to="/#contact"
             className="btn-primary text-lg px-8 py-3 inline-block"
           >
             Réserver un Audit Gratuit

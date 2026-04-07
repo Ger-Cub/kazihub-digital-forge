@@ -5,6 +5,7 @@ import { Palette, Smartphone, Monitor, Users, Zap, Eye } from 'lucide-react';
 import { Button } from '../../components/ui/button';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { SEO } from '../../components/SEO';
 
 const UXUIDesign = () => {
   const { t } = useLanguage();
@@ -20,6 +21,7 @@ const UXUIDesign = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+      <SEO titleKey="seo.design.title" descriptionKey="seo.design.description" />
       <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Hero Section */}
