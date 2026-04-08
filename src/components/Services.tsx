@@ -165,7 +165,7 @@ const Services = () => {
               {[...technologies, ...technologies].map((tech, index) => (
                 <div
                   key={index}
-                  className="glass-premium px-8 py-4 rounded-2xl text-lg font-bold text-cosmic-slate flex items-center gap-4 hover:bg-white/5 dark:hover:bg-white/5 hover:text-foreground transition-all duration-300 border border-black/5 dark:border-white/5 min-w-max shadow-md dark:shadow-none"
+                  className="glass-premium px-8 py-4 rounded-2xl text-lg font-bold text-cosmic-slate flex items-center gap-4 hover:bg-white/5 dark:hover:bg-white/5 hover:text-foreground transition-all duration-300 border border-black/10 dark:border-white/5 min-w-max shadow-md dark:shadow-none"
                 >
                   <span className={`${tech.color} group-hover:scale-110 transition-transform`}>{tech.icon}</span>
                   {tech.name}

@@ -90,7 +90,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Contact Form */}
-          <div className="glass-premium p-10 rounded-[2.5rem] relative order-2 lg:order-1 border border-white/5">
+          <div className="glass-premium p-10 rounded-[2.5rem] relative order-2 lg:order-1">
             <h3 className="text-2xl font-bold font-outfit text-foreground mb-8">{t('contact.title')}</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -126,7 +126,7 @@ const Contact = () => {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 rows={5}
-                className="bg-white/50 dark:bg-white/[0.03] border-black/10 dark:border-white/10 text-foreground placeholder-cosmic-slate rounded-2xl focus:ring-cosmic-indigo p-5 shadow-sm"
+                className="bg-white/50 dark:bg-white/[0.03] border-black/20 dark:border-white/10 text-foreground placeholder-cosmic-slate rounded-2xl focus:ring-cosmic-indigo p-5 shadow-sm"
               />
               <Button
                 type="submit"
@@ -146,7 +146,7 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-10 order-1 lg:order-2">
             {/* WhatsApp CTA */}
-            <div className="glass-card p-10 rounded-[2.5rem] text-center group border border-white/5">
+            <div className="glass-card p-10 rounded-[2.5rem] text-center group">
               <div className="w-20 h-20 bg-green-500/10 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:rotate-12 transition-transform duration-500">
                 <MessageSquare className="w-10 h-10 text-green-500" />
               </div>
@@ -162,7 +162,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Details */}
-            <div className="glass-card p-10 rounded-[2.5rem] border border-white/5">
+            <div className="glass-card p-10 rounded-[2.5rem]">
               <h3 className="text-xl font-bold font-outfit text-foreground mb-8 uppercase tracking-widest">{t('contact.info.title')}</h3>
               <div className="space-y-6">
                 {[

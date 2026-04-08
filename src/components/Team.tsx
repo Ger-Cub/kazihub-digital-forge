@@ -29,7 +29,7 @@ const Team = () => {
                     {members.map((member) => (
                         <div key={member.id} className="group relative">
                             <div className="absolute inset-0 bg-cosmic-indigo/5 blur-2xl group-hover:bg-cosmic-indigo/10 transition-colors duration-500 rounded-full"></div>
-                            <div className="glass-card p-6 text-center relative z-10 border border-white/5 hover:border-white/20 transition-all duration-500 hover:-translate-y-2">
+                            <div className="glass-card p-6 text-center relative z-10 transition-all duration-500 hover:-translate-y-2">
                                 <div className="w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden bg-gradient-to-br from-cosmic-indigo to-cosmic-violet p-1 shadow-xl group-hover:rotate-3 transition-transform duration-500">
                                     <img
                                         src={member.image}

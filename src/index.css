@@ -112,7 +112,7 @@
   }
 
   .glass-premium {
-    @apply bg-white/70 dark:bg-white/[0.03] backdrop-blur-xl border border-black/[0.08] dark:border-white/[0.08] shadow-sm dark:shadow-glass;
+    @apply bg-white/70 dark:bg-white/[0.03] backdrop-blur-xl border border-black/[0.12] dark:border-white/[0.08] shadow-sm dark:shadow-glass;
   }
 
   .glass-card {
