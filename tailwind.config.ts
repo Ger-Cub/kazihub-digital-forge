@@ -147,8 +147,8 @@ export default {
 				'slide-in-right': 'slide-in-right 0.8s ease-out',
 				'bounce-gentle': 'bounce-gentle 2s infinite',
 				'shimmer': 'shimmer 1.5s infinite',
-				'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-				'pulse-very-slow': 'pulse 12s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'pulse-very-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 			}
 		}
 	},

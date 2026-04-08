@@ -12,8 +12,9 @@ const Hero = () => {
     >
       {/* Background Mesh Gradients */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-[10%] left-[-10%] w-[50%] h-[50%] bg-cosmic-indigo/20 rounded-full blur-[120px] animate-pulse-slow"></div>
-        <div className="absolute top-[20%] left-[0%] w-[40%] h-[40%] bg-cosmic-violet/15 rounded-full blur-[100px] animate-pulse-very-slow"></div>
+        <div className="absolute top-[10%] left-[-10%] w-[50%] h-[50%] bg-cosmic-indigo/20 rounded-full blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-[10%] right-[-10%] w-[50%] h-[50%] bg-cosmic-violet/20 rounded-full blur-[120px] animate-pulse-slow"></div>
+        <div className="absolute top-[30%] left-[10%] w-[30%] h-[30%] bg-cosmic-pink/10 rounded-full blur-[100px] animate-pulse-very-slow"></div>
       </div>
 
       {/* Grid Pattern Pattern */}
