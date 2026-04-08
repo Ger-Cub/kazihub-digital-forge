@@ -1,6 +1,13 @@
 
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { 
+  Target, 
+  Users, 
+  Lightbulb, 
+  Globe, 
+  ArrowRight 
+} from 'lucide-react';
 
 const About = () => {
   const { t } = useLanguage();
@@ -27,21 +34,23 @@ const About = () => {
             <p className="text-xl text-cosmic-slate leading-relaxed font-medium">
               {t('about.description')}
             </p>
-            <p className="text-lg text-white/70 leading-relaxed">
+            <p className="text-lg text-foreground/70 leading-relaxed">
               {t('about.mission')}
             </p>
 
             {/* Values */}
             <div className="grid grid-cols-2 gap-6 mt-12">
               {[
-                { emoji: '🎯', key: 'excellence' },
-                { emoji: '🤝', key: 'collaboration' },
-                { emoji: '💡', key: 'innovation' },
-                { emoji: '🌍', key: 'impact' }
+                { icon: <Target className="w-8 h-8 text-cosmic-indigo" />, key: 'excellence' },
+                { icon: <Users className="w-8 h-8 text-cosmic-violet" />, key: 'collaboration' },
+                { icon: <Lightbulb className="w-8 h-8 text-cosmic-pink" />, key: 'innovation' },
+                { icon: <Globe className="w-8 h-8 text-blue-400" />, key: 'impact' }
               ].map((value) => (
                 <div key={value.key} className="glass-card p-6 rounded-2xl group transition-all duration-500">
-                  <div className="text-3xl mb-4 group-hover:scale-125 transition-transform duration-300 transform-gpu">{value.emoji}</div>
-                  <div className="text-white font-bold font-outfit uppercase tracking-wider text-sm">{t(`about.value.${value.key}`)}</div>
+                  <div className="mb-4 group-hover:scale-110 transition-transform duration-300 transform-gpu">
+                    {value.icon}
+                  </div>
+                  <div className="text-foreground font-bold font-outfit uppercase tracking-wider text-sm">{t(`about.value.${value.key}`)}</div>
                 </div>
               ))}
             </div>
@@ -57,7 +66,7 @@ const About = () => {
                 </div>
 
                 <div className="w-full aspect-video mx-auto mb-8 rounded-2xl rotate-1 group-hover:rotate-0 transition-transform duration-500 overflow-hidden bg-gradient-to-br from-cosmic-indigo to-cosmic-violet p-1 shadow-2xl">
-                  <div className="w-full h-full bg-cosmic-black rounded-xl overflow-hidden relative">
+                  <div className="w-full h-full bg-background rounded-xl overflow-hidden relative">
                     <img
                       src="/projects/geocongo-chat.png"
                       alt="GeoCongo AI Chat Interface"
@@ -66,7 +75,7 @@ const About = () => {
                   </div>
                 </div>
 
-                <h3 className="text-4xl font-bold font-outfit text-white mb-4">
+                <h3 className="text-4xl font-bold font-outfit text-foreground mb-4">
                   {t('about.bestProject.name')}
                 </h3>
 
@@ -74,7 +83,7 @@ const About = () => {
                   {t('about.bestProject.desc')}
                 </p>
 
-                <div className="text-sm text-white/60 mb-8 p-4 rounded-xl bg-white/5 border border-white/5">
+                <div className="text-sm text-foreground/60 mb-8 p-4 rounded-xl bg-white/5 border border-white/5">
                   {t('about.bestProject.features')}
                 </div>
 
@@ -85,7 +94,7 @@ const About = () => {
                   className="btn-primary w-full group"
                 >
                   <span>{t('about.bestProject.cta')}</span>
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
             </div>

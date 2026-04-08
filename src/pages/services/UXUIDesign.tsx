@@ -20,7 +20,7 @@ const UXUIDesign = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-cosmic-black text-white selection:bg-cosmic-indigo/30">
+    <div className="min-h-screen bg-background text-foreground selection:bg-cosmic-indigo/30">
       <SEO titleKey="seo.design.title" descriptionKey="seo.design.description" />
       <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative overflow-hidden">
@@ -43,9 +43,9 @@ const UXUIDesign = () => {
           {services.map((service, index) => (
             <div key={index} className="glass-card p-10 rounded-[2.5rem] group hover:-translate-y-2 transition-all duration-500">
               <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-cosmic-indigo/20 group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-8 h-8 text-cosmic-indigo group-hover:text-white transition-colors" />
+                <service.icon className="w-8 h-8 text-cosmic-indigo group-hover:text-foreground transition-colors" />
               </div>
-              <h3 className="text-2xl font-bold font-outfit mb-4 text-white group-hover:text-cosmic-indigo transition-colors">{service.title}</h3>
+              <h3 className="text-2xl font-bold font-outfit mb-4 text-foreground group-hover:text-cosmic-indigo transition-colors">{service.title}</h3>
               <p className="text-cosmic-slate font-medium leading-relaxed">{service.desc}</p>
             </div>
           ))}
@@ -53,7 +53,7 @@ const UXUIDesign = () => {
 
         {/* Process */}
         <div className="mb-24 relative z-10">
-          <h2 className="text-4xl font-bold font-outfit text-center text-white mb-16 tracking-tight">Processus Design</h2>
+          <h2 className="text-4xl font-bold font-outfit text-center text-foreground mb-16 tracking-tight">Processus Design</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             {[
               { step: '01', title: 'Recherche', desc: 'Étude des utilisateurs et du marché' },
@@ -65,7 +65,7 @@ const UXUIDesign = () => {
                 <div className="w-20 h-20 bg-gradient-to-br from-cosmic-indigo to-cosmic-violet rounded-3xl rotate-6 group-hover:rotate-0 flex items-center justify-center mx-auto mb-8 shadow-xl shadow-cosmic-indigo/20 transition-transform duration-500">
                   <span className="text-white font-bold font-outfit text-2xl">{step.step}</span>
                 </div>
-                <h3 className="text-xl font-bold font-outfit text-white mb-3 tracking-wide">{step.title}</h3>
+                <h3 className="text-xl font-bold font-outfit text-foreground mb-3 tracking-wide">{step.title}</h3>
                 <p className="text-cosmic-slate font-medium">{step.desc}</p>
               </div>
             ))}
@@ -75,7 +75,7 @@ const UXUIDesign = () => {
         {/* CTA Section */}
         <div className="text-center glass-premium p-16 rounded-[3rem] border border-white/10 relative overflow-hidden group">
           <div className="absolute inset-0 bg-gradient-to-br from-cosmic-indigo/10 to-cosmic-violet/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          <h2 className="text-4xl font-bold font-outfit text-white mb-6 relative z-10 tracking-tight">Améliorons votre UX ensemble</h2>
+          <h2 className="text-4xl font-bold font-outfit text-foreground mb-6 relative z-10 tracking-tight">Améliorons votre UX ensemble</h2>
           <p className="text-xl text-cosmic-slate mb-10 relative z-10 font-medium">Audit UX gratuit de votre interface actuelle</p>
           <Button className="btn-primary h-16 px-12 text-lg rounded-2xl relative z-10">
             Audit UX Gratuit

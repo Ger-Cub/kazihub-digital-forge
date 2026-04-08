@@ -39,7 +39,7 @@
     --cosmic-indigo: 239 84% 67%;
     --cosmic-violet: 271 91% 65%;
     --cosmic-pink: 327 73% 60%;
-    --cosmic-black: 220 33% 2%;
+    --cosmic-black: 0 0% 98%; /* Light background for 'black' in light mode */
     --cosmic-slate: 215 20% 65%;
   }
 
@@ -72,6 +72,8 @@
     --border: 217 33% 17%;
     --input: 217 33% 17%;
     --ring: 239 84% 67%;
+
+    --cosmic-black: 220 33% 2%; /* True dark for dark mode */
   }
 }
 
@@ -128,8 +130,19 @@
   }
 }
 
-@keyframes shimmer {
-  100% {
-    transform: translateX(100%);
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
   }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

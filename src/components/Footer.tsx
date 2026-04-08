@@ -1,6 +1,16 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
+import {
+  Linkedin,
+  Github,
+  Mail,
+  MessageSquare,
+  Phone,
+  Globe,
+  Clock
+} from 'lucide-react';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -17,12 +27,10 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center space-x-4 mb-8 group" onClick={scrollToTop}>
-              <div className="w-12 h-12 bg-gradient-to-br from-cosmic-indigo to-cosmic-violet rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <span className="text-white font-bold text-2xl font-outfit">K</span>
-              </div>
+              <Logo size="lg" />
               <div>
-                <h1 className="text-2xl font-bold font-outfit text-white tracking-tight">KaziHub</h1>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-cosmic-slate font-bold">Digital Forge</p>
+                <h1 className="text-2xl font-bold font-outfit text-foreground tracking-tight">KaziHub</h1>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-cosmic-slate font-bold">Digital Agency</p>
               </div>
             </Link>
             <p className="text-cosmic-slate mb-10 max-w-sm leading-relaxed font-medium">
@@ -30,17 +38,21 @@ const Footer = () => {
             </p>
             <div className="flex space-x-5">
               {[
-                { icon: '💼', link: '#' },
-                { icon: '🐙', link: '#' },
-                { icon: '✉️', link: '#' },
-                { icon: '📱', link: `https://wa.me/+243991102448` }
+                { icon: <Linkedin className="w-5 h-5 text-foreground" />, link: '#' },
+                { icon: <Github className="w-5 h-5 text-foreground" />, link: '#' },
+                { icon: <Mail className="w-5 h-5 text-foreground" />, link: 'mailto:contact@kazihub.digital' },
+                { icon: <MessageSquare className="w-5 h-5 text-foreground" />, link: `https://wa.me/+243991102448` }
               ].map((social, i) => (
                 <a
                   key={i}
                   href={social.link}
-                  className="w-12 h-12 glass-premium rounded-xl flex items-center justify-center hover:bg-cosmic-indigo transition-all duration-300 hover:-translate-y-1 shadow-lg"
+                  className="w-12 h-12 glass-premium rounded-xl flex items-center justify-center hover:bg-cosmic-indigo transition-all duration-300 hover:-translate-y-1 shadow-lg group"
                 >
-                  <span className="text-xl">{social.icon}</span>
+                  <div className="group-hover:scale-110 transition-transform duration-300">
+                    <div className="group-hover:text-white transition-colors">
+                      {social.icon}
+                    </div>
+                  </div>
                 </a>
               ))}
             </div>
@@ -48,7 +60,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-bold text-white uppercase tracking-[0.2em] mb-8">{t('footer.services')}</h3>
+            <h3 className="text-sm font-bold text-foreground uppercase tracking-[0.2em] mb-8">{t('footer.services')}</h3>
             <ul className="space-y-4">
               {[
                 { to: '/services/web-development', key: 'services.web.title' },
@@ -73,16 +85,16 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-bold text-white uppercase tracking-[0.2em] mb-8">{t('footer.contact')}</h3>
+            <h3 className="text-sm font-bold text-foreground uppercase tracking-[0.2em] mb-8">{t('footer.contact')}</h3>
             <ul className="space-y-5">
               {[
-                { icon: '📧', val: 'contact@kazihub.digital' },
-                { icon: '📱', val: '+243 991 102 448' },
-                { icon: '🌍', val: 'Kinshasa, RD Congo' },
-                { icon: '⏰', val: t('footer.response') }
+                { icon: <Mail className="w-4 h-4" />, val: 'contact@kazihub.digital' },
+                { icon: <Phone className="w-4 h-4" />, val: '+243 991 102 448' },
+                { icon: <Globe className="w-4 h-4" />, val: 'Kinshasa, RD Congo' },
+                { icon: <Clock className="w-4 h-4" />, val: t('footer.response') }
               ].map((item, i) => (
                 <li key={i} className="flex items-center space-x-3 text-cosmic-slate font-medium">
-                  <span className="text-white/40">{item.icon}</span>
+                  <span className="text-foreground/40">{item.icon}</span>
                   <span>{item.val}</span>
                 </li>
               ))}
@@ -99,7 +111,7 @@ const Footer = () => {
               <Link
                 key={key}
                 to={`/${key}`}
-                className="text-cosmic-slate/60 hover:text-white text-xs font-bold uppercase tracking-widest transition-colors"
+                className="text-cosmic-slate/60 hover:text-foreground text-xs font-bold uppercase tracking-widest transition-colors"
                 onClick={scrollToTop}
               >
                 {t(`footer.${key}`)}

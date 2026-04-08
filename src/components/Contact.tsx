@@ -5,6 +5,15 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { useToast } from '../hooks/use-toast';
+import { 
+  Phone, 
+  Mail, 
+  Globe, 
+  Clock, 
+  Send,
+  MessageSquare,
+  ArrowUpRight
+} from 'lucide-react';
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -82,7 +91,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Contact Form */}
           <div className="glass-premium p-10 rounded-[2.5rem] relative order-2 lg:order-1 border border-white/5">
-            <h3 className="text-2xl font-bold font-outfit text-white mb-8">{t('contact.title')}</h3>
+            <h3 className="text-2xl font-bold font-outfit text-foreground mb-8">{t('contact.title')}</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
@@ -91,7 +100,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="bg-white/[0.03] border-white/10 text-white placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo"
+                  className="bg-white/[0.03] border-white/10 text-foreground placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo"
                 />
                 <Input
                   type="email"
@@ -100,7 +109,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="bg-white/[0.03] border-white/10 text-white placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo"
+                  className="bg-white/[0.03] border-white/10 text-foreground placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo"
                 />
               </div>
               <Input
@@ -108,7 +117,7 @@ const Contact = () => {
                 placeholder={t('contact.company')}
                 value={formData.company}
                 onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                className="bg-white/[0.03] border-white/10 text-white placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo"
+                className="bg-white/[0.03] border-white/10 text-foreground placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo"
               />
               <Textarea
                 name="message"
@@ -117,17 +126,17 @@ const Contact = () => {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 rows={5}
-                className="bg-white/[0.03] border-white/10 text-white placeholder-cosmic-slate rounded-2xl focus:ring-cosmic-indigo p-5"
+                className="bg-white/[0.03] border-white/10 text-foreground placeholder-cosmic-slate rounded-2xl focus:ring-cosmic-indigo p-5"
               />
               <Button
                 type="submit"
-                className="btn-primary w-full h-16 text-lg rounded-2xl"
+                className="btn-primary w-full h-16 text-lg rounded-2xl group"
                 disabled={isLoading}
               >
                 {isLoading ? t('contact.sending') : (
                   <>
                     <span>{t('contact.send')}</span>
-                    <span className="ml-2 group-hover:translate-x-2 transition-transform">↗</span>
+                    <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </>
                 )}
               </Button>
@@ -139,31 +148,34 @@ const Contact = () => {
             {/* WhatsApp CTA */}
             <div className="glass-card p-10 rounded-[2.5rem] text-center group border border-white/5">
               <div className="w-20 h-20 bg-green-500/10 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:rotate-12 transition-transform duration-500">
-                <span className="text-4xl">📱</span>
+                <MessageSquare className="w-10 h-10 text-green-500" />
               </div>
-              <h3 className="text-2xl font-bold font-outfit text-white mb-4">{t('contact.direct.title')}</h3>
+              <h3 className="text-2xl font-bold font-outfit text-foreground mb-4">{t('contact.direct.title')}</h3>
               <p className="text-cosmic-slate mb-8 font-medium">{t('contact.direct.subtitle')}</p>
               <Button
                 onClick={handleWhatsApp}
-                className="bg-green-600 hover:bg-green-500 text-white font-bold h-16 px-10 rounded-2xl transition-all duration-300 shadow-xl shadow-green-600/20 w-full md:w-auto"
+                className="bg-green-600 hover:bg-green-500 text-white font-bold h-16 px-10 rounded-2xl transition-all duration-300 shadow-xl shadow-green-600/20 w-full md:w-auto flex items-center justify-center gap-2 mx-auto"
               >
-                {t('cta.whatsapp')} 📱
+                <span>{t('cta.whatsapp')}</span>
+                <MessageSquare className="w-5 h-5" />
               </Button>
             </div>
 
             {/* Contact Details */}
             <div className="glass-card p-10 rounded-[2.5rem] border border-white/5">
-              <h3 className="text-xl font-bold font-outfit text-white mb-8 uppercase tracking-widest">{t('contact.info.title')}</h3>
+              <h3 className="text-xl font-bold font-outfit text-foreground mb-8 uppercase tracking-widest">{t('contact.info.title')}</h3>
               <div className="space-y-6">
                 {[
-                  { icon: '📧', val: 'contact@kazihub.digital' },
-                  { icon: '📱', val: '+243 991 102 448' },
-                  { icon: '🌍', val: 'Kinshasa, RD Congo' },
-                  { icon: '⏰', val: t('footer.response') }
+                  { icon: <Mail className="w-5 h-5" />, val: 'contact@kazihub.digital' },
+                  { icon: <Phone className="w-5 h-5" />, val: '+243 991 102 448' },
+                  { icon: <Globe className="w-5 h-5" />, val: 'Kinshasa, RD Congo' },
+                  { icon: <Clock className="w-5 h-5" />, val: t('footer.response') }
                 ].map((item, i) => (
                   <div key={i} className="flex items-center space-x-6 group">
                     <div className="w-12 h-12 glass-premium rounded-xl flex items-center justify-center group-hover:bg-cosmic-indigo transition-colors duration-300">
-                      <span className="text-xl">{item.icon}</span>
+                      <div className="text-foreground group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                        {item.icon}
+                      </div>
                     </div>
                     <span className="text-cosmic-slate font-medium text-lg">{item.val}</span>
                   </div>

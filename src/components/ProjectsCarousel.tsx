@@ -100,8 +100,8 @@ const ProjectsCarousel = () => {
               onClick={() => scroll('left')}
               disabled={!canScrollLeft}
               className={cn(
-                "w-14 h-14 glass-premium text-white flex items-center justify-center rounded-2xl transition-all duration-300 shadow-xl group border border-white/5 active:scale-95",
-                !canScrollLeft ? "opacity-30 cursor-not-allowed" : "hover:bg-cosmic-indigo"
+                "w-14 h-14 glass-premium text-foreground flex items-center justify-center rounded-2xl transition-all duration-300 shadow-xl group border border-white/5 active:scale-95",
+                !canScrollLeft ? "opacity-30 cursor-not-allowed" : "hover:bg-cosmic-indigo hover:text-white"
               )}
               aria-label="Previous project"
             >
@@ -111,8 +111,8 @@ const ProjectsCarousel = () => {
               onClick={() => scroll('right')}
               disabled={!canScrollRight}
               className={cn(
-                "w-14 h-14 glass-premium text-white flex items-center justify-center rounded-2xl transition-all duration-300 shadow-xl group border border-white/5 active:scale-95",
-                !canScrollRight ? "opacity-30 cursor-not-allowed" : "hover:bg-cosmic-indigo"
+                "w-14 h-14 glass-premium text-foreground flex items-center justify-center rounded-2xl transition-all duration-300 shadow-xl group border border-white/5 active:scale-95",
+                !canScrollRight ? "opacity-30 cursor-not-allowed" : "hover:bg-cosmic-indigo hover:text-white"
               )}
               aria-label="Next project"
             >
@@ -132,14 +132,14 @@ const ProjectsCarousel = () => {
                 className="min-w-[300px] md:min-w-[420px] flex-shrink-0 snap-start h-full"
               >
                 <div className="glass-card p-4 rounded-3xl group hover:border-white/20 transition-all duration-500 hover:-translate-y-2 shadow-xl relative h-[460px] flex flex-col">
-                  <div className="relative overflow-hidden rounded-2xl w-full h-64 mb-5 bg-cosmic-black shadow-inner flex-shrink-0">
+                  <div className="relative overflow-hidden rounded-2xl w-full h-64 mb-5 bg-background shadow-inner flex-shrink-0">
                     <img
                       src={project.image}
                       alt={`${project.name} - ${project.category}`}
                       loading="lazy"
                       className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-1000 grayscale-[40%] group-hover:grayscale-0"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-cosmic-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
 
                     {project.link && (
                       <a
@@ -161,7 +161,7 @@ const ProjectsCarousel = () => {
 
                   <div className="px-2 flex-grow flex flex-col justify-between">
                     <div>
-                      <h3 className="text-2xl font-bold font-outfit text-white mb-2 group-hover:text-cosmic-indigo transition-colors duration-300">
+                      <h3 className="text-2xl font-bold font-outfit text-foreground mb-2 group-hover:text-cosmic-indigo transition-colors duration-300">
                         {project.name}
                       </h3>
                       <p className="text-cosmic-slate text-sm leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-500 overflow-hidden">

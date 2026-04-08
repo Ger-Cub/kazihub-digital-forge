@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Linkedin, Twitter } from 'lucide-react';
 
 const Team = () => {
     const { t } = useLanguage();
@@ -36,7 +37,7 @@ const Team = () => {
                                         className="w-full h-full object-cover rounded-xl"
                                     />
                                 </div>
-                                <h3 className="text-xl font-bold font-outfit text-white mb-2 group-hover:text-cosmic-indigo transition-colors">
+                                <h3 className="text-xl font-bold font-outfit text-foreground mb-2 group-hover:text-cosmic-indigo transition-colors">
                                     {t(member.nameKey)}
                                 </h3>
                                 <p className="text-cosmic-slate text-sm font-bold uppercase tracking-wider mb-6">
@@ -45,8 +46,12 @@ const Team = () => {
 
                                 {/* Minimal Social Links */}
                                 <div className="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    <a href="#" className="text-white/40 hover:text-cosmic-indigo transition-colors text-lg">💼</a>
-                                    <a href="#" className="text-white/40 hover:text-cosmic-violet transition-colors text-lg">🐦</a>
+                                    <a href="#" className="w-10 h-10 glass-premium rounded-xl flex items-center justify-center text-foreground/40 hover:text-cosmic-indigo hover:bg-white/5 transition-all duration-300">
+                                        <Linkedin className="w-5 h-5" />
+                                    </a>
+                                    <a href="#" className="w-10 h-10 glass-premium rounded-xl flex items-center justify-center text-foreground/40 hover:text-cosmic-violet hover:bg-white/5 transition-all duration-300">
+                                        <Twitter className="w-5 h-5" />
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -40,6 +40,10 @@ const translations = {
     'about.bestProject.desc': 'Plateforme d\'intelligence géologique alimentée par l\'IA pour l\'exploration minière en RDC et en Afrique.',
     'about.bestProject.features': 'Intégration de données satellites, agents IA spécialisés et renforcement des capacités.',
     'about.bestProject.cta': 'Visiter le projet',
+    'about.value.excellence': 'Excellence',
+    'about.value.collaboration': 'Collaboration',
+    'about.value.innovation': 'Innovation',
+    'about.value.impact': 'Impact Social',
 
     // Team
     'team.title': 'Notre Équipe',
@@ -68,6 +72,7 @@ const translations = {
     'services.consulting.desc': 'Coaching digital, transformation numérique pour PME et startups.',
     'services.design.title': 'UX/UI Design',
     'services.design.desc': 'Prototypes Figma, wireframes interactifs et optimisation UX.',
+    'services.tech.title': 'Technologies & Outils',
 
     // CTA
     'cta.title': 'Lancez votre transformation digitale aujourd\'hui !',
@@ -204,6 +209,10 @@ const translations = {
     'about.bestProject.desc': 'AI-powered geological intelligence platform for mineral exploration in the DRC and Africa.',
     'about.bestProject.features': 'Satellite data integration, specialized AI agents, and capacity building.',
     'about.bestProject.cta': 'Visit Project',
+    'about.value.excellence': 'Excellence',
+    'about.value.collaboration': 'Collaboration',
+    'about.value.innovation': 'Innovation',
+    'about.value.impact': 'Social Impact',
 
     // Team
     'team.title': 'Our Team',
@@ -232,6 +241,7 @@ const translations = {
     'services.consulting.desc': 'Digital coaching, digital transformation for SMEs and startups.',
     'services.design.title': 'UX/UI Design',
     'services.design.desc': 'Figma prototypes, interactive wireframes, and UX optimization.',
+    'services.tech.title': 'Technologies & Tools',
 
     // CTA
     'cta.title': 'Start your digital transformation today!',

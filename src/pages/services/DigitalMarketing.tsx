@@ -20,7 +20,7 @@ const DigitalMarketing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-cosmic-black text-white selection:bg-cosmic-indigo/30">
+    <div className="min-h-screen bg-background text-foreground selection:bg-cosmic-indigo/30">
       <header className="relative overflow-hidden pt-32 pb-24">
         {/* Glow effect */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-cosmic-indigo/20 to-transparent blur-3xl opacity-50"></div>
@@ -47,9 +47,9 @@ const DigitalMarketing = () => {
           {services.map((service, index) => (
             <div key={index} className="glass-card p-10 rounded-[2.5rem] group hover:-translate-y-2 transition-all duration-500">
               <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-cosmic-indigo/20 group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-8 h-8 text-cosmic-indigo group-hover:text-white transition-colors" />
+                <service.icon className="w-8 h-8 text-cosmic-indigo group-hover:text-foreground transition-colors" />
               </div>
-              <h3 className="text-2xl font-bold font-outfit mb-4 text-white group-hover:text-cosmic-indigo transition-colors">{service.title}</h3>
+              <h3 className="text-2xl font-bold font-outfit mb-4 text-foreground group-hover:text-cosmic-indigo transition-colors">{service.title}</h3>
               <p className="text-cosmic-slate font-medium leading-relaxed">{service.desc}</p>
             </div>
           ))}
@@ -71,7 +71,7 @@ const DigitalMarketing = () => {
 
         {/* Packages */}
         <div className="mb-24">
-          <h2 className="text-4xl font-bold font-outfit text-center text-white mb-16 tracking-tight">Nos Formules</h2>
+          <h2 className="text-4xl font-bold font-outfit text-center text-foreground mb-16 tracking-tight">Nos Formules</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
@@ -94,8 +94,8 @@ const DigitalMarketing = () => {
                 key={index}
                 className={`glass-card p-10 rounded-[2.5rem] border ${index === 1 ? 'border-cosmic-indigo/50 shadow-2xl shadow-cosmic-indigo/10' : 'border-white/5'} transition-all duration-500 hover:-translate-y-2`}
               >
-                <h3 className="text-2xl font-bold font-outfit text-white mb-2">{pkg.name}</h3>
-                <div className="text-4xl font-bold font-outfit text-white mb-8">
+                <h3 className="text-2xl font-bold font-outfit text-foreground mb-2">{pkg.name}</h3>
+                <div className="text-4xl font-bold font-outfit text-foreground mb-8">
                   {pkg.price}
                   {pkg.price !== 'Sur mesure' && <span className="text-sm text-cosmic-slate font-medium ml-2">/ mois</span>}
                 </div>

@@ -1,11 +1,11 @@
+
 import React from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { Bot, MessageCircle, Brain, Zap, Users, BarChart } from 'lucide-react';
-import { Button } from '../../components/ui/button';
+import { Bot, MessageCircle, Brain, Zap, Users, BarChart, ArrowUpRight } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
-import { SEO } from '../../components/SEO';
+import SEO from '../../components/SEO';
 
 const AIAgents = () => {
   const { t } = useLanguage();
@@ -20,7 +20,7 @@ const AIAgents = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-cosmic-black text-white selection:bg-cosmic-indigo/30">
+    <div className="min-h-screen bg-background text-foreground selection:bg-cosmic-indigo/30">
       <SEO titleKey="seo.ai.title" descriptionKey="seo.ai.description" />
       <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative overflow-hidden">
@@ -44,9 +44,9 @@ const AIAgents = () => {
           {services.map((service, index) => (
             <div key={index} className="glass-card p-10 rounded-[2.5rem] group hover:-translate-y-2 transition-all duration-500">
               <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-cosmic-indigo/20 group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-8 h-8 text-cosmic-indigo group-hover:text-white transition-colors" />
+                <service.icon className="w-8 h-8 text-cosmic-indigo group-hover:text-foreground transition-colors" />
               </div>
-              <h3 className="text-2xl font-bold font-outfit mb-4 text-white group-hover:text-cosmic-indigo transition-colors">{service.title}</h3>
+              <h3 className="text-2xl font-bold font-outfit mb-4 text-foreground group-hover:text-cosmic-indigo transition-colors">{service.title}</h3>
               <p className="text-cosmic-slate font-medium leading-relaxed">{service.desc}</p>
             </div>
           ))}
@@ -54,7 +54,7 @@ const AIAgents = () => {
 
         {/* Use Cases */}
         <div className="mb-24 relative z-10">
-          <h2 className="text-4xl font-bold font-outfit text-center text-white mb-16 tracking-tight">{t('services.process.title')}</h2>
+          <h2 className="text-4xl font-bold font-outfit text-center text-foreground mb-16 tracking-tight">{t('services.process.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {[
               { title: 'E-commerce', desc: 'Agent pour recommandations produits et gestion commandes' },
@@ -63,7 +63,7 @@ const AIAgents = () => {
               { title: 'Formation', desc: 'Tuteurs IA personnalisés pour l\'apprentissage' }
             ].map((useCase, index) => (
               <div key={index} className="glass-card p-10 rounded-[2.5rem] border border-white/5 hover:border-cosmic-indigo/30 transition-colors group">
-                <h3 className="text-2xl font-bold font-outfit text-white mb-4 group-hover:text-cosmic-indigo transition-colors">{useCase.title}</h3>
+                <h3 className="text-2xl font-bold font-outfit text-foreground mb-4 group-hover:text-cosmic-indigo transition-colors">{useCase.title}</h3>
                 <p className="text-cosmic-slate font-medium leading-relaxed">{useCase.desc}</p>
               </div>
             ))}
@@ -73,15 +73,15 @@ const AIAgents = () => {
         {/* Demo CTA */}
         <div className="text-center glass-premium p-16 rounded-[3rem] border border-white/10 relative overflow-hidden group">
           <div className="absolute inset-0 bg-gradient-to-br from-cosmic-indigo/10 to-cosmic-violet/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          <h2 className="text-4xl font-bold font-outfit text-white mb-6 relative z-10 tracking-tight">{t('services.cta.demo')}</h2>
+          <h2 className="text-4xl font-bold font-outfit text-foreground mb-6 relative z-10 tracking-tight">{t('services.cta.demo')}</h2>
           <p className="text-xl text-cosmic-slate mb-10 relative z-10 font-medium">{t('services.cta.quote')}</p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
             <Link
               to="/#contact"
-              className="btn-primary h-16 px-12 text-lg rounded-2xl flex items-center justify-center min-w-[200px]"
+              className="btn-primary h-16 px-12 text-lg rounded-2xl flex items-center justify-center min-w-[200px] group"
             >
               <span>{t('services.cta.demo')}</span>
-              <span className="ml-2">↗</span>
+              <ArrowUpRight className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Link>
             <Link
               to="/pricing"

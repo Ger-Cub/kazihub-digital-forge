@@ -60,15 +60,15 @@ const Hero = () => {
           {/* Stats Bar */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
             <div className="glass-card p-8 rounded-3xl group">
-              <div className="text-4xl font-bold font-outfit text-white mb-2 group-hover:scale-110 transition-transform duration-300">10+</div>
+              <div className="text-4xl font-bold font-outfit text-foreground mb-2 group-hover:scale-110 transition-transform duration-300">10+</div>
               <div className="text-sm font-bold uppercase tracking-widest text-cosmic-slate">{t('hero.stats.experience')}</div>
             </div>
             <div className="glass-card p-8 rounded-3xl group">
-              <div className="text-4xl font-bold font-outfit text-white mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
+              <div className="text-4xl font-bold font-outfit text-foreground mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
               <div className="text-sm font-bold uppercase tracking-widest text-cosmic-slate">{t('hero.stats.projects')}</div>
             </div>
             <div className="glass-card p-8 rounded-3xl group">
-              <div className="text-4xl font-bold font-outfit text-white mb-2 group-hover:scale-110 transition-transform duration-300">24h</div>
+              <div className="text-4xl font-bold font-outfit text-foreground mb-2 group-hover:scale-110 transition-transform duration-300">24h</div>
               <div className="text-sm font-bold uppercase tracking-widest text-cosmic-slate">{t('hero.stats.response')}</div>
             </div>
           </div>

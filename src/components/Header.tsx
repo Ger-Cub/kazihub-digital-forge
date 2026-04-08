@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from './ui/button';
 import { ThemeToggle } from './ThemeToggle';
+import Logo from './Logo';
 
 const Header = () => {
   const { language, toggleLanguage, t } = useLanguage();
@@ -24,12 +25,10 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-11 h-11 bg-gradient-to-br from-cosmic-indigo to-cosmic-violet rounded-xl flex items-center justify-center shadow-lg shadow-cosmic-indigo/20 group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white font-bold text-2xl font-outfit">K</span>
-            </div>
+            <Logo />
             <div className="flex flex-col">
-              <h1 className="text-2xl font-bold font-outfit tracking-tight text-white leading-none">KaziHub</h1>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-cosmic-slate font-medium">Digital Forge</p>
+              <h1 className="text-2xl font-bold font-outfit tracking-tight text-foreground leading-none">KaziHub</h1>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-cosmic-slate font-medium">Digital Agency</p>
             </div>
           </Link>
 
@@ -40,7 +39,7 @@ const Header = () => {
                 <a
                   key={item.key}
                   href={item.href}
-                  className="text-cosmic-slate hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-white/5"
+                  className="text-cosmic-slate hover:text-foreground px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-white/5"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t(item.key)}
@@ -55,7 +54,7 @@ const Header = () => {
               <ThemeToggle />
               <button
                 onClick={toggleLanguage}
-                className="glass-premium border-white/10 text-white hover:bg-white/10 px-4 py-1.5 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-wider"
+                className="glass-premium border-white/10 text-foreground hover:bg-white/10 px-4 py-1.5 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-wider"
               >
                 {language}
               </button>
@@ -65,7 +64,7 @@ const Header = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-cosmic-slate hover:text-white p-2 focus:outline-none"
+                className="text-cosmic-slate hover:text-foreground p-2 focus:outline-none"
               >
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   {isMenuOpen ? (
@@ -87,7 +86,7 @@ const Header = () => {
                 <a
                   key={item.key}
                   href={item.href}
-                  className="text-cosmic-slate hover:text-white block px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 hover:bg-white/5"
+                  className="text-cosmic-slate hover:text-foreground block px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 hover:bg-white/5"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t(item.key)}
@@ -97,7 +96,7 @@ const Header = () => {
                 <ThemeToggle />
                 <button
                   onClick={toggleLanguage}
-                  className="glass-premium border-white/20 text-white px-4 py-2 rounded-xl text-sm font-bold uppercase tracking-wider"
+                  className="glass-premium border-white/20 text-foreground px-4 py-2 rounded-xl text-sm font-bold uppercase tracking-wider"
                 >
                   {language}
                 </button>
