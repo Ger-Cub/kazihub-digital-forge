@@ -19,21 +19,21 @@ const ProjectsCarousel = () => {
       link: 'https://geocongoai.com'
     },
     {
-      name: 'KaziMarket',
+      name: 'HexaShop',
       description: 'Solution e-commerce multivendeur optimisée pour les paiements mobiles locaux.',
       image: '/lovable-uploads/ecommerce.jpg',
       category: 'Développement Web',
       link: '#'
     },
     {
-      name: 'Lola Bot',
+      name: 'Yetubook',
       description: 'Assistant virtuel intelligent spécialisé dans le service client automatisé en lingala et français.',
       image: '/lovable-uploads/ai-chatbot.png',
       category: 'Automation',
       link: '#'
     },
     {
-      name: 'SafeRide App',
+      name: 'RelaxApp',
       description: 'Application mobile de transport sécurisé avec suivi en temps réel et alertes d\'urgence.',
       image: '/lovable-uploads/mobile-app.png',
       category: 'Développement Mobile',
@@ -53,7 +53,7 @@ const ProjectsCarousel = () => {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
       setCanScrollLeft(scrollLeft > 10);
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-      
+
       // Update active index based on scroll position
       const index = Math.round(scrollLeft / (420 + 24)); // card width + gap
       setActiveIndex(index);
