@@ -7,16 +7,41 @@ const Team = () => {
     const { t } = useLanguage();
 
     const members = [
-        { id: 1, nameKey: 'team.member1.name', roleKey: 'team.member1.role', image: '/lovable-uploads/team/member1.jpg' },
-        { id: 2, nameKey: 'team.member2.name', roleKey: 'team.member2.role', image: '/lovable-uploads/team/member2.png' },
-        { id: 3, nameKey: 'team.member3.name', roleKey: 'team.member3.role', image: '/lovable-uploads/team/member3.jpg' },
-        { id: 4, nameKey: 'team.member4.name', roleKey: 'team.member4.role', image: '/lovable-uploads/team/member4.jpg' },
+        {
+            id: 1,
+            nameKey: 'team.member1.name',
+            roleKey: 'team.member1.role',
+            image: '/lovable-uploads/team/member1.jpg',
+            linkedin: 'https://www.linkedin.com/in/landry-bitege/'
+        },
+        {
+            id: 2,
+            nameKey: 'team.member2.name',
+            roleKey: 'team.member2.role',
+            image: '/lovable-uploads/team/member2.png',
+            linkedin: 'https://www.linkedin.com/in/firmin-nganduli-01766b228/'
+        },
+        {
+            id: 3,
+            nameKey: 'team.member3.name',
+            roleKey: 'team.member3.role',
+            image: '/lovable-uploads/team/member3.jpg',
+            linkedin: 'https://www.linkedin.com/in/birusha-ndegeya-243b032a9/?locale=fr'
+        },
+        {
+            id: 4,
+            nameKey: 'team.member4.name',
+            roleKey: 'team.member4.role',
+            image: '/lovable-uploads/team/member4.jpg',
+            linkedin: 'https://www.linkedin.com/in/magene-sem-jo%C3%ABl-7380a1351/'
+        },
     ];
 
     const lead = {
         nameKey: 'team.lead.name',
         roleKey: 'team.lead.role',
-        image: '/lovable-uploads/ceo-modern-v2.png'
+        image: '/lovable-uploads/ceo-modern-v2.png',
+        linkedin: 'https://www.linkedin.com/in/g%C3%A9rard-cubaka-38a27619b/'
     };
 
     const MemberCard = ({ member }: { member: any }) => (
@@ -38,7 +63,12 @@ const Team = () => {
                 </p>
 
                 <div className="flex justify-center space-x-4 transition-opacity duration-500">
-                    <a href="#" className="w-10 h-10 glass-premium rounded-xl flex items-center justify-center text-foreground/50 hover:text-cosmic-indigo hover:bg-white/5 dark:hover:bg-white/5 transition-all duration-300 shadow-sm dark:shadow-none">
+                    <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 glass-premium rounded-xl flex items-center justify-center text-foreground/50 hover:text-cosmic-indigo hover:bg-white/5 dark:hover:bg-white/5 transition-all duration-300 shadow-sm dark:shadow-none"
+                    >
                         <Linkedin className="w-5 h-5" />
                     </a>
                     <a href="#" className="w-10 h-10 glass-premium rounded-xl flex items-center justify-center text-foreground/50 hover:text-cosmic-violet hover:bg-white/5 dark:hover:bg-white/5 transition-all duration-300 shadow-sm dark:shadow-none">
