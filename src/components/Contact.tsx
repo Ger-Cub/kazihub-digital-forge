@@ -5,11 +5,11 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { useToast } from '../hooks/use-toast';
-import { 
-  Phone, 
-  Mail, 
-  Globe, 
-  Clock, 
+import {
+  Phone,
+  Mail,
+  Globe,
+  Clock,
   Send,
   MessageSquare,
   ArrowUpRight
@@ -100,7 +100,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="bg-white/[0.03] border-white/10 text-foreground placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo"
+                  className="bg-white/50 dark:bg-white/[0.03] border-black/10 dark:border-white/10 text-foreground placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo shadow-sm"
                 />
                 <Input
                   type="email"
@@ -109,7 +109,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="bg-white/[0.03] border-white/10 text-foreground placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo"
+                  className="bg-white/50 dark:bg-white/[0.03] border-black/10 dark:border-white/10 text-foreground placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo shadow-sm"
                 />
               </div>
               <Input
@@ -117,7 +117,7 @@ const Contact = () => {
                 placeholder={t('contact.company')}
                 value={formData.company}
                 onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                className="bg-white/[0.03] border-white/10 text-foreground placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo"
+                className="bg-white/50 dark:bg-white/[0.03] border-black/10 dark:border-white/10 text-foreground placeholder-cosmic-slate h-14 rounded-2xl focus:ring-cosmic-indigo shadow-sm"
               />
               <Textarea
                 name="message"
@@ -126,7 +126,7 @@ const Contact = () => {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 rows={5}
-                className="bg-white/[0.03] border-white/10 text-foreground placeholder-cosmic-slate rounded-2xl focus:ring-cosmic-indigo p-5"
+                className="bg-white/50 dark:bg-white/[0.03] border-black/10 dark:border-white/10 text-foreground placeholder-cosmic-slate rounded-2xl focus:ring-cosmic-indigo p-5 shadow-sm"
               />
               <Button
                 type="submit"

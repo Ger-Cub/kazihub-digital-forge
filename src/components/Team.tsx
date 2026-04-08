@@ -45,11 +45,11 @@ const Team = () => {
                                 </p>
 
                                 {/* Minimal Social Links */}
-                                <div className="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    <a href="#" className="w-10 h-10 glass-premium rounded-xl flex items-center justify-center text-foreground/40 hover:text-cosmic-indigo hover:bg-white/5 transition-all duration-300">
+                                <div className="flex justify-center space-x-4 transition-opacity duration-500">
+                                    <a href="#" className="w-10 h-10 glass-premium rounded-xl flex items-center justify-center text-foreground/50 hover:text-cosmic-indigo hover:bg-white/5 dark:hover:bg-white/5 transition-all duration-300 shadow-sm dark:shadow-none">
                                         <Linkedin className="w-5 h-5" />
                                     </a>
-                                    <a href="#" className="w-10 h-10 glass-premium rounded-xl flex items-center justify-center text-foreground/40 hover:text-cosmic-violet hover:bg-white/5 transition-all duration-300">
+                                    <a href="#" className="w-10 h-10 glass-premium rounded-xl flex items-center justify-center text-foreground/50 hover:text-cosmic-violet hover:bg-white/5 dark:hover:bg-white/5 transition-all duration-300 shadow-sm dark:shadow-none">
                                         <Twitter className="w-5 h-5" />
                                     </a>
                                 </div>

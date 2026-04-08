@@ -81,8 +81,8 @@ export default {
 				'kazihub-gray': 'hsl(var(--muted-foreground))'
 			},
 			boxShadow: {
-				'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
-				'glass-indigo': '0 8px 32px 0 rgba(99, 102, 241, 0.1)',
+				'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.08)',
+				'glass-indigo': '0 8px 32px 0 rgba(99, 102, 241, 0.05)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
