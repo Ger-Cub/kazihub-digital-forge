@@ -18,49 +18,29 @@ const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
     <div className={`${sizes[size]} relative flex items-center justify-center ${className}`}>
       {/* Structure principale (Conteneur SVG) */}
       <svg
-        viewBox="0 0 100 100"
+        viewBox="0 0 180 180"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full relative z-10 drop-shadow-sm"
       >
         <defs>
           <linearGradient id="logoForgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="hsl(var(--cosmic-indigo))" />
-            <stop offset="50%" stopColor="hsl(var(--cosmic-violet))" />
-            <stop offset="100%" stopColor="hsl(var(--cosmic-pink))" />
+            <stop offset="0%" stopColor="#6A00FF" />
+            <stop offset="100%" stopColor="#FF2DAA" />
           </linearGradient>
         </defs>
 
-        {/* Le K Stylisé Moderne - Minimaliste */}
-        <g>
-          {/* Barre verticale élégante */}
-          <rect
-            x="30" y="25" width="8" height="50" rx="4"
-            fill="url(#logoForgeGradient)"
-          />
+        {/* Stylized K */}
+        <path
+          d="M50 40 L50 140 M50 90 L110 40 M50 90 L110 140"
+          stroke="url(#logoForgeGradient)"
+          strokeWidth="14"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
 
-          {/* Bras supérieur */}
-          <path
-            d="M65 25C65 25 45 40 40 45"
-            stroke="url(#logoForgeGradient)"
-            strokeWidth="8"
-            strokeLinecap="round"
-          />
-
-          {/* Bras inférieur */}
-          <path
-            d="M40 55C45 60 65 75 65 75"
-            stroke="url(#logoForgeGradient)"
-            strokeWidth="8"
-            strokeLinecap="round"
-          />
-
-          {/* Cœur central (Le Hub) */}
-          <circle
-            cx="40" cy="50" r="4"
-            fill="white"
-          />
-        </g>
+        {/* Accent circle (innovation touch) */}
+        <circle cx="125" cy="90" r="6" fill="#FF2DAA" />
       </svg>
     </div>
   );
