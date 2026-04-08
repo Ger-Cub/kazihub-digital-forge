@@ -12,8 +12,8 @@ const Hero = () => {
     >
       {/* Background Mesh Gradients */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-[10%] left-[-10%] w-[50%] h-[50%] bg-cosmic-indigo/20 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-[10%] right-[-10%] w-[50%] h-[50%] bg-cosmic-violet/20 rounded-full blur-[120px] animate-pulse delay-1000"></div>
+        <div className="absolute top-[10%] left-[-10%] w-[50%] h-[50%] bg-cosmic-indigo/20 rounded-full blur-[120px] animate-pulse-slow"></div>
+        <div className="absolute top-[20%] left-[0%] w-[40%] h-[40%] bg-cosmic-violet/15 rounded-full blur-[100px] animate-pulse-very-slow"></div>
       </div>
 
       {/* Grid Pattern Pattern */}
@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in flex flex-col items-center">
           {/* Badge */}
-          <div className="glass-premium px-4 py-1.5 rounded-full text-xs font-bold text-cosmic-indigo uppercase tracking-[0.2em] mb-8 animate-bounce-gentle">
+          <div className="glass-premium px-4 py-1.5 rounded-full text-xs font-bold text-cosmic-indigo uppercase tracking-[0.2em] mb-8">
             Innovation & Craftsmanship
           </div>
 
