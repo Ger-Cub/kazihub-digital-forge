@@ -83,6 +83,8 @@ export default {
 			boxShadow: {
 				'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.08)',
 				'glass-indigo': '0 8px 32px 0 rgba(99, 102, 241, 0.05)',
+				'premium': '0 20px 50px -12px rgba(0, 0, 0, 0.1), 0 10px 30px -10px rgba(0, 0, 0, 0.04)',
+				'premium-hover': '0 30px 60px -12px rgba(99, 102, 241, 0.15), 0 18px 36px -18px rgba(99, 102, 241, 0.1)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

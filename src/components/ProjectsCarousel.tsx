@@ -131,7 +131,7 @@ const ProjectsCarousel = () => {
                 key={index}
                 className="min-w-[300px] md:min-w-[420px] flex-shrink-0 snap-start h-full"
               >
-                <div className="glass-card p-4 rounded-3xl group hover:border-white/20 transition-all duration-500 hover:-translate-y-2 shadow-xl relative h-[460px] flex flex-col">
+                <div className="glass-card p-4 rounded-3xl group hover:border-white/20 transition-all duration-500 hover:-translate-y-2 shadow-premium hover:shadow-premium-hover relative h-[460px] flex flex-col">
                   <div className="relative overflow-hidden rounded-2xl w-full h-64 mb-5 bg-background shadow-inner flex-shrink-0">
                     <img
                       src={project.image}
