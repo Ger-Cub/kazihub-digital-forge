@@ -19,6 +19,13 @@ const ProjectsCarousel = () => {
       link: 'https://geocongoai.com'
     },
     {
+      name: 'Venus Consulting',
+      description: "Solutions stratégiques en Géosciences, Ingénierie Minière & Forage Hydraulique. De l'étude à la réalisation, avec précision.",
+      image: '/projects/venus-consulting.png',
+      category: 'Engineering & Consulting',
+      link: 'https://www.venusconsultingvc.com/'
+    },
+    {
       name: 'HexaShop',
       description: 'Solution e-commerce multivendeur optimisée pour les paiements mobiles locaux.',
       image: '/lovable-uploads/ecommerce.jpg',
@@ -129,7 +136,7 @@ const ProjectsCarousel = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="min-w-[300px] md:min-w-[420px] flex-shrink-0 snap-start h-full"
+                className="w-[300px] md:w-[420px] flex-shrink-0 snap-start h-full"
               >
                 <div className="glass-card p-4 rounded-3xl group hover:border-white/20 transition-all duration-500 hover:-translate-y-2 shadow-premium hover:shadow-premium-hover relative h-[460px] flex flex-col">
                   <div className="relative overflow-hidden rounded-2xl w-full h-64 mb-5 bg-background shadow-inner flex-shrink-0">
