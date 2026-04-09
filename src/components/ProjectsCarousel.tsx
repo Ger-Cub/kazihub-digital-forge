@@ -47,11 +47,11 @@ const ProjectsCarousel = () => {
       link: 'https://relaxenglishapp.vercel.app/'
     },
     {
-      name: 'Forge ERP',
-      description: 'Système de gestion intégrée sur mesure pour les PME du secteur industriel.',
-      image: '/lovable-uploads/crm-system.webp',
-      category: 'Software Architecture',
-      link: '#'
+      name: 'Gerard AI Trading',
+      description: 'Plateforme d\'automatisation du trading avec l\'IA sur l\'API Binance. Marché en direct, suivi PnL et agents IA intégrés.',
+      image: '/projects/gerard-ai-trading.png',
+      category: 'Intelligence Artificielle',
+      link: 'https://gerardaitrading.vercel.app/'
     }
   ];
 
