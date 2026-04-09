@@ -26,13 +26,6 @@ const ProjectsCarousel = () => {
       link: 'https://www.venusconsultingvc.com/'
     },
     {
-      name: 'HexaShop',
-      description: 'Solution e-commerce multivendeur optimisée pour les paiements mobiles locaux.',
-      image: '/lovable-uploads/ecommerce.jpg',
-      category: 'Développement Web',
-      link: '#'
-    },
-    {
       name: 'Yetubook',
       description: 'Assistant virtuel intelligent spécialisé dans le service client automatisé en lingala et français.',
       image: '/lovable-uploads/ai-chatbot.png',
@@ -52,6 +45,13 @@ const ProjectsCarousel = () => {
       image: '/projects/gerard-ai-trading.png',
       category: 'Intelligence Artificielle',
       link: 'https://gerardaitrading.vercel.app/'
+    },
+    {
+      name: 'HexaShop',
+      description: 'Solution e-commerce multivendeur optimisée pour les paiements mobiles locaux.',
+      image: '/lovable-uploads/ecommerce.jpg',
+      category: 'Développement Web',
+      link: '#'
     }
   ];
 
