@@ -124,7 +124,7 @@ const ProjectsCarousel = () => {
         <div className="relative">
           <div
             ref={carouselRef}
-            className="flex items-stretch space-x-6 overflow-x-auto py-4 px-4 -mx-4 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            className="flex items-stretch space-x-6 overflow-x-auto py-12 px-4 -mx-4 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           >
             {projects.map((project, index) => (
               <div
@@ -191,7 +191,9 @@ const ProjectsCarousel = () => {
                 }}
                 className={cn(
                   "h-1.5 transition-all duration-500 rounded-full",
-                  activeIndex === index ? "w-12 bg-cosmic-indigo" : "w-2 bg-white/20 hover:bg-white/40"
+                  activeIndex === index
+                    ? "w-12 bg-cosmic-indigo"
+                    : "w-2 bg-cosmic-indigo/20 hover:bg-cosmic-indigo/40"
                 )}
                 aria-label={`Go to project ${index + 1}`}
               />
