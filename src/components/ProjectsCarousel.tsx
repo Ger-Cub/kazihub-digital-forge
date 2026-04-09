@@ -37,14 +37,14 @@ const ProjectsCarousel = () => {
       description: 'Assistant virtuel intelligent spécialisé dans le service client automatisé en lingala et français.',
       image: '/lovable-uploads/ai-chatbot.png',
       category: 'Automation',
-      link: '#'
+      link: 'https://capston-project-ger-cub.vercel.app/'
     },
     {
       name: 'RelaxApp',
       description: 'Application mobile de transport sécurisé avec suivi en temps réel et alertes d\'urgence.',
       image: '/lovable-uploads/mobile-app.png',
       category: 'Développement Mobile',
-      link: '#'
+      link: 'https://relaxenglishapp.vercel.app/'
     },
     {
       name: 'Forge ERP',
