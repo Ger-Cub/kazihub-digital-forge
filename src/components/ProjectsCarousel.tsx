@@ -27,16 +27,16 @@ const ProjectsCarousel = () => {
     },
     {
       name: 'Yetubook',
-      description: 'Assistant virtuel intelligent spécialisé dans le service client automatisé en lingala et français.',
+      description: 'Réseau social panafricain connectant les communautés africaines à travers le monde, pour partager, échanger et s\'inspirer.',
       image: '/lovable-uploads/ai-chatbot.png',
-      category: 'Automation',
+      category: 'Réseau Social',
       link: 'https://capston-project-ger-cub.vercel.app/'
     },
     {
       name: 'RelaxApp',
-      description: 'Application mobile de transport sécurisé avec suivi en temps réel et alertes d\'urgence.',
+      description: 'Plateforme d\'apprentissage de l\'anglais interactive et gamifiée, conçue pour rendre la maîtrise de la langue accessible à tous.',
       image: '/lovable-uploads/mobile-app.png',
-      category: 'Développement Mobile',
+      category: 'EdTech',
       link: 'https://relaxenglishapp.vercel.app/'
     },
     {
