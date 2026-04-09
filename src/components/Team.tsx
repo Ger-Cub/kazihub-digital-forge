@@ -44,6 +44,13 @@ const Team = () => {
         linkedin: 'https://www.linkedin.com/in/g%C3%A9rard-cubaka-38a27619b/'
     };
 
+    const lead2 = {
+        nameKey: 'team.lead2.name',
+        roleKey: 'team.lead2.role',
+        image: '/lovable-uploads/team/benedicte-tuteka.png',
+        linkedin: 'https://www.linkedin.com/in/b%C3%A9n%C3%A9dicte-tuteka-mukuta-5184802b2/'
+    };
+
     const MemberCard = ({ member }: { member: any }) => (
         <div className="group relative">
             <div className="absolute inset-0 bg-cosmic-indigo/5 blur-2xl group-hover:bg-cosmic-indigo/10 transition-colors duration-500 rounded-full"></div>
@@ -99,8 +106,11 @@ const Team = () => {
                             <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cosmic-indigo to-cosmic-violet rounded-full"></div>
                         </h3>
                     </div>
-                    <div className="max-w-xs mx-auto">
-                        <MemberCard member={lead} />
+                    <div className="max-w-2xl mx-auto">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center">
+                            <MemberCard member={lead} />
+                            <MemberCard member={lead2} />
+                        </div>
                     </div>
                 </div>
 
